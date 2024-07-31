@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: "ArialItalic";
-  font-weight: 4000;
+  font-weight: 400;
   font-style: italic;
   src: url("/fonts/Arial-Italic.woff2") format("woff2"), url("/fonts/Arial-Italic.woff") format("woff");
   font-display: swap;
@@ -39,11 +39,15 @@
 $color-dark-l: #545454;
 $color-dark-xl: #4C4C4C;
 $color-dark-m: #B2B2B2;
+$color-dark-s: #CDCDCD;
+$color-primary: #F1CDB3;
+$color-light-s: #FAFAFA;
 
 body {
   @include font-family-serif;
   font-weight: 400;
   color: $color-dark-l;
+  background-color: #372C26;
 }
 
 h2 {
@@ -82,4 +86,74 @@ h5 {
   font-size: 12px;
   line-height: 1.5;
   color: $color-dark-m;
+}
+
+.link {
+  position: relative;
+  padding: 5px;
+  text-decoration: none;
+  transition: color 0.15s ease-out;
+
+  &:hover {
+  }
+
+  &:active {
+    &:after {
+      width: 100%;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: $color-primary;
+    transition: width 0.15s ease-out;
+  }
+
+  &--dark {
+    color: $color-dark-s;
+
+    &:active {
+      color: $color-light-s;
+    }
+
+    &:hover {     
+      color: $color-light-s;
+    }
+  }
+}
+
+.header {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    &-title {
+      margin-bottom: 10px;
+      font-size: 32px;
+      line-height: 1.1;
+      letter-spacing: 0.06em;
+      color: $color-primary;
+    }
+
+    &-subtitle {
+      text-align: center;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    list-style-type: none;
+    gap: 35px;
+  }
 }

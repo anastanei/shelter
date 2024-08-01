@@ -19,6 +19,7 @@
 }
 body {
   font-family: Georgia, -apple-system, "Times New Roman", Garamond, serif;
+  position: relative;
   font-weight: 400;
   color: #545454;
   background-color: #372C26;
@@ -45,6 +46,13 @@ h5 {
   font-size: 15px;
   line-height: 1.1;
   letter-spacing: 0.06em;
+}
+
+.container {
+  width: calc(100% - 80px);
+  max-width: 1920px;
+  padding: 0 40px;
+  margin: 0 auto;
 }
 
 .paragraph-l {
@@ -91,7 +99,7 @@ h5 {
   color: #FAFAFA;
 }
 
-.header {
+.header__container {
   padding-top: 30px;
   display: flex;
   justify-content: space-between;

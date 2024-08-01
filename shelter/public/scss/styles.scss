@@ -45,13 +45,14 @@ $color-primary: #F1CDB3;
 $color-primary-light: #FDDCC4;
 $color-light-s: #FAFAFA;
 $color-light-xl: #FFFFFF;
+$color-background: #372C26;
 
 body {
   @include font-family-serif;
   position: relative;
   font-weight: 400;
   color: $color-dark-l;
-  background-color: #372C26;
+  background-color: $color-background;
 }
 
 h1, h2, h3, h4, h5, p {

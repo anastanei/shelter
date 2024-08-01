@@ -238,3 +238,42 @@ h5 {
     right: 0;
   }
 }
+
+.section-about {
+  background-color: $color-light-xl;
+
+  &__container {
+    padding: 80px 0 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 120px;
+  }
+
+  &__text-area {
+    max-width: 430px;
+
+    & > * {
+      margin-bottom: 25px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    max-width: 10.6em;
+    color: $color-dark-l;
+  }
+
+
+  &__paragraph {
+    color: $color-dark-xl;
+  }
+
+  &__picture {
+    display: block;
+  }
+}

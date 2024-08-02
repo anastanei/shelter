@@ -25,8 +25,12 @@ body {
   background-color: #372C26;
 }
 
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, p, ul {
   margin: 0;
+}
+
+ul {
+  padding: 0;
 }
 
 button {
@@ -323,6 +327,33 @@ h5 {
 }
 .section-pets__button {
   margin: 0 auto;
+}
+
+.section-help {
+  background-color: #FFFFFF;
+}
+.section-help__container {
+  padding: 80px 0 100px;
+}
+.section-help__title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 120px;
+  row-gap: 55px;
+}
+.features__item {
+  display: block;
+  width: fit-content;
+}
+.features__item-icon {
+  display: block;
+  margin: 0 auto 30px;
 }
 
 /*# sourceMappingURL=index.css.map */

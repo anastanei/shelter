@@ -73,7 +73,7 @@ h5 {
 
 .container {
   width: calc(100% - 80px);
-  max-width: 1920px;
+  max-width: 1280px;
   padding: 0 40px;
   margin: 0 auto;
 }
@@ -95,27 +95,36 @@ h5 {
 
 .link {
   position: relative;
-  padding: 5px;
+  display: block;
   text-decoration: none;
   transition: color 0.15s ease-out;
 }
-.link:active:after {
-  width: 100%;
+.link::before {
+  position: absolute;
+  display: block;
+  top: -5px;
+  left: -5px;
+  bottom: -5px;
+  right: -5px;
+  content: "";
 }
 .link:after {
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: -3px;
   content: "";
   width: 0;
   height: 3px;
   background-color: #F1CDB3;
   transition: width 0.15s ease-out;
 }
+.link:active:after, .link--active:after {
+  width: 100%;
+}
 .link--dark {
   color: #CDCDCD;
 }
-.link--dark:active {
+.link--dark:active, .link--dark--active {
   color: #FAFAFA;
 }
 .link--dark:hover {
@@ -147,7 +156,7 @@ h5 {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   width: 100%;
 }
@@ -165,7 +174,11 @@ h5 {
   color: #F1CDB3;
 }
 .header__logo-subtitle {
+  font-family: Arial, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 13px;
+  line-height: 15px;
   text-align: center;
+  letter-spacing: 0.1em;
   color: #FFFFFF;
 }
 
@@ -174,7 +187,7 @@ h5 {
   align-items: center;
   padding-left: 0;
   list-style-type: none;
-  gap: 35px;
+  gap: 36px;
 }
 
 .slider {

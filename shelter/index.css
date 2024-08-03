@@ -435,16 +435,15 @@ h5 {
   content: "";
 }
 .footer__container {
-  width: fit-content;
-  margin: 0 auto;
   padding-top: 40px;
   display: flex;
+  justify-content: space-between;
   gap: 160px;
 }
 .footer__link-area {
   align-self: flex-start;
   width: fit-content;
-  padding-top: 18px;
+  padding-top: 17px;
   display: grid;
   grid-template-rows: auto auto auto;
   grid-auto-flow: column;

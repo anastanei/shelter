@@ -220,6 +220,11 @@ h5 {
   }
 
   &__logo {
+
+    &-title, &-subtitle {
+      transition: color 0.2s ease-out;
+    }
+
     &-title {
       margin-bottom: 10px;
       font-size: 32px;
@@ -235,6 +240,23 @@ h5 {
       text-align: center;
       letter-spacing: 0.1em;
       color: $color-light-xl;
+    }
+
+
+    &:hover {
+      & .header__logo {
+        &-title, &-subtitle {
+          color: $color-primary-light;
+        }
+      }
+    }
+
+    &:active {
+      & .header__logo {
+        &-title, &-subtitle {
+          color: $color-light-s;
+        }
+      }
     }
   }
 }

@@ -171,6 +171,9 @@ h5 {
   justify-content: space-between;
   align-items: center;
 }
+.header__logo-title, .header__logo-subtitle {
+  transition: color 0.2s ease-out;
+}
 .header__logo-title {
   margin-bottom: 10px;
   font-size: 32px;
@@ -185,6 +188,12 @@ h5 {
   text-align: center;
   letter-spacing: 0.1em;
   color: #FFFFFF;
+}
+.header__logo:hover .header__logo-title, .header__logo:hover .header__logo-subtitle {
+  color: #FDDCC4;
+}
+.header__logo:active .header__logo-title, .header__logo:active .header__logo-subtitle {
+  color: #FAFAFA;
 }
 
 .nav__list {

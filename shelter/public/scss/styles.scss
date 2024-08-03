@@ -187,6 +187,7 @@ h5 {
   transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
 
   &--secondary {
+    padding: 13px 43px;
     border: 2px $color-primary solid;
     background-color: unset;
   }
@@ -272,16 +273,14 @@ h5 {
   border-radius: 9px;
   transition: background-color 0.15s ease-out;
 
-  &__picture, &__title {
-    margin-bottom: 30px;
-  }
-
   &__picture {
+    margin-bottom: 24px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
   }
 
   &__title {
+    margin-bottom: 30px;
     display: block;
     color: $color-dark-l;
   }

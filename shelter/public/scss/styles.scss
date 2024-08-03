@@ -48,6 +48,10 @@ $color-light-l: #F6F6F6;
 $color-light-xl: #FFFFFF;
 $color-background: #372C26;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @include font-family-serif;
   position: relative;

@@ -17,6 +17,10 @@
   src: url("/fonts/Arial-Italic.woff2") format("woff2"), url("/fonts/Arial-Italic.woff") format("woff");
   font-display: swap;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Georgia, -apple-system, "Times New Roman", Garamond, serif;
   position: relative;

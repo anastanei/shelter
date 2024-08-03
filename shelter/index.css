@@ -1,20 +1,20 @@
 @font-face {
   font-family: "Georgia";
   font-weight: 400;
-  src: url("/fonts/Georgia.woff2") format("woff2"), url("fonts/Georgia.woff") format("woff");
+  src: url("fonts/Georgia.woff2") format("woff2"), url("fonts/Georgia.woff") format("woff");
   font-display: swap;
 }
 @font-face {
   font-family: "Arial";
   font-weight: 400;
-  src: url("/fonts/ArialMT.woff2") format("woff2"), url("/fonts/ArialMT.woff") format("woff");
+  src: url("fonts/ArialMT.woff2") format("woff2"), url("fonts/ArialMT.woff") format("woff");
   font-display: swap;
 }
 @font-face {
   font-family: "ArialItalic";
   font-weight: 400;
   font-style: italic;
-  src: url("/fonts/Arial-Italic.woff2") format("woff2"), url("/fonts/Arial-Italic.woff") format("woff");
+  src: url("fonts/Arial-Italic.woff2") format("woff2"), url("fonts/Arial-Italic.woff") format("woff");
   font-display: swap;
 }
 html {
@@ -283,7 +283,7 @@ h5 {
 
 .section-hero {
   position: relative;
-  background-image: url("/images/start-screen-texture.png");
+  background-image: url("images/start-screen-texture.png");
 }
 .section-hero::before {
   position: absolute;
@@ -436,7 +436,7 @@ h5 {
 
 .footer {
   position: relative;
-  background-image: url("/images/start-screen-texture.png");
+  background-image: url("images/start-screen-texture.png");
 }
 .footer::before {
   position: absolute;

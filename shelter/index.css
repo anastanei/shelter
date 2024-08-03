@@ -365,6 +365,9 @@ h5 {
   display: block;
   margin: 0 auto 30px;
 }
+.features__item-title {
+  text-align: center;
+}
 
 .section-donation {
   background-color: #F6F6F6;

@@ -26,10 +26,16 @@ body {
   position: relative;
   font-weight: 400;
   color: #545454;
-  background-color: #B2B2B2;
+  background-color: #b2b2b2;
 }
 
-h1, h2, h3, h4, h5, p, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul {
   margin: 0;
   font-weight: 400;
 }
@@ -63,7 +69,8 @@ h3 {
   letter-spacing: 0.06em;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.06em;
@@ -86,7 +93,7 @@ h5 {
   font-family: Arial, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 15px;
   line-height: 1.6;
-  color: #4C4C4C;
+  color: #4c4c4c;
 }
 
 .paragraph-s {
@@ -94,7 +101,7 @@ h5 {
   font-style: italic;
   font-size: 12px;
   line-height: 1.5;
-  color: #B2B2B2;
+  color: #b2b2b2;
 }
 
 .link {
@@ -119,20 +126,20 @@ h5 {
   content: "";
   width: 0;
   height: 3px;
-  background-color: #F1CDB3;
+  background-color: #f1cdb3;
   transition: width 0.15s ease-out;
 }
 .link:active:after, .link--active:after {
   width: 100%;
 }
 .link--dark {
-  color: #CDCDCD;
+  color: #cdcdcd;
 }
 .link--dark:active, .link--dark--active {
-  color: #FAFAFA;
+  color: #fafafa;
 }
 .link--dark:hover {
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
 .button {
@@ -144,20 +151,20 @@ h5 {
   letter-spacing: 0.06em;
   color: #292929;
   text-decoration: none;
-  background-color: #F1CDB3;
+  background-color: #f1cdb3;
   border-radius: 100px;
   transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
 }
 .button--secondary {
   padding: 13px 43px;
-  border: 2px #F1CDB3 solid;
+  border: 2px #f1cdb3 solid;
   background-color: unset;
 }
 .button--active:hover {
-  background-color: #FDDCC4;
+  background-color: #fddcc4;
 }
 .button--active:active {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .header {
@@ -179,7 +186,7 @@ h5 {
   font-size: 32px;
   line-height: 1.1;
   letter-spacing: 0.06em;
-  color: #F1CDB3;
+  color: #f1cdb3;
 }
 .header__logo-subtitle {
   font-family: Arial, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -187,13 +194,13 @@ h5 {
   line-height: 15px;
   text-align: center;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .header__logo:hover .header__logo-title, .header__logo:hover .header__logo-subtitle {
-  color: #FDDCC4;
+  color: #fddcc4;
 }
 .header__logo:active .header__logo-title, .header__logo:active .header__logo-subtitle {
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
 .nav__list {
@@ -226,7 +233,7 @@ h5 {
 
 .card {
   padding-bottom: 30px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   border-radius: 9px;
   transition: background-color 0.15s ease-out;
 }
@@ -241,15 +248,15 @@ h5 {
   color: #545454;
 }
 .card:hover {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .card:hover .button {
-  background-color: #FDDCC4;
-  border-color: #FDDCC4;
+  background-color: #fddcc4;
+  border-color: #fddcc4;
 }
 .card:active .button {
-  background-color: #F6F6F6;
-  border-color: #F6F6F6;
+  background-color: #f6f6f6;
+  border-color: #f6f6f6;
 }
 
 .arrow-button {
@@ -258,27 +265,27 @@ h5 {
   align-items: center;
   width: 52px;
   height: 52px;
-  border: 2px solid #F1CDB3;
+  border: 2px solid #f1cdb3;
   border-radius: 100px;
   transition-property: background-color, border-color, color;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
 }
 .arrow-button:hover {
-  background-color: #FDDCC4;
-  border-color: #FDDCC4;
+  background-color: #fddcc4;
+  border-color: #fddcc4;
 }
 .arrow-button:active {
-  background-color: #F1CDB3;
-  border-color: #F1CDB3;
+  background-color: #f1cdb3;
+  border-color: #f1cdb3;
 }
 .arrow-button:disabled {
   background-color: unset;
-  border-color: #CDCDCD;
-  color: #CDCDCD;
+  border-color: #cdcdcd;
+  color: #cdcdcd;
 }
 .arrow-button:disabled path {
-  fill: #CDCDCD;
+  fill: #cdcdcd;
 }
 
 .section-hero {
@@ -291,7 +298,7 @@ h5 {
   display: block;
   width: 100%;
   height: 100%;
-  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+  background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
   content: "";
 }
 .section-hero__container {
@@ -301,12 +308,12 @@ h5 {
 .section-hero__title {
   max-width: 7.4em;
   margin-bottom: 42px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .section-hero__intro {
   max-width: 30.6em;
   margin-bottom: 42px;
-  color: #CDCDCD;
+  color: #cdcdcd;
 }
 .section-hero__picture {
   position: absolute;
@@ -315,7 +322,7 @@ h5 {
 }
 
 .section-about {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .section-about__container {
   padding: 80px 0 100px;
@@ -339,7 +346,7 @@ h5 {
   color: #545454;
 }
 .section-about__paragraph {
-  color: #4C4C4C;
+  color: #4c4c4c;
 }
 .section-about__picture {
   display: block;
@@ -348,7 +355,7 @@ h5 {
 .section-pets {
   position: relative;
   overflow: hidden;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 .section-pets__container {
   position: relative;
@@ -366,7 +373,7 @@ h5 {
 }
 
 .section-help {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .section-help__container {
   padding: 80px 0 100px;
@@ -396,7 +403,7 @@ h5 {
 }
 
 .section-donation {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 .section-donation__container {
   display: flex;
@@ -423,15 +430,15 @@ h5 {
   align-items: center;
   gap: 15px;
   padding: 10px 15px;
-  background-color: #F1CDB3;
+  background-color: #f1cdb3;
   border-radius: 9px;
   transition: background-color 0.2s ease-out;
 }
 .card-link:hover {
-  background-color: #FDDCC4;
+  background-color: #fddcc4;
 }
 .card-link:active {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .footer {
@@ -444,7 +451,7 @@ h5 {
   display: block;
   width: 100%;
   height: 100%;
-  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+  background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
   content: "";
 }
 .footer__container {
@@ -464,27 +471,27 @@ h5 {
   column-gap: 160px;
 }
 .footer__title {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .footer__link {
   display: flex;
   align-items: center;
   gap: 20px;
-  color: #F1CDB3;
+  color: #f1cdb3;
   transition: all 0.2s ease-out;
 }
 .footer__link:hover {
   transform: scaleX(1.015);
-  color: #FDDCC4;
+  color: #fddcc4;
 }
 .footer__link:hover path {
-  fill: #FDDCC4;
+  fill: #fddcc4;
 }
 .footer__link:active {
-  color: #F6F6F6;
+  color: #f6f6f6;
 }
 .footer__link:active path {
-  fill: #F6F6F6;
+  fill: #f6f6f6;
 }
 .footer__picture {
   display: block;

@@ -1,14 +1,16 @@
 @font-face {
   font-family: "Georgia";
   font-weight: 400;
-  src: url("fonts/Georgia.woff2") format("woff2"), url("fonts/Georgia.woff") format("woff");
+  src: url("fonts/Georgia.woff2") format("woff2"),
+    url("fonts/Georgia.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Arial";
   font-weight: 400;
-  src: url("fonts/ArialMT.woff2") format("woff2"), url("fonts/ArialMT.woff") format("woff");
+  src: url("fonts/ArialMT.woff2") format("woff2"),
+    url("fonts/ArialMT.woff") format("woff");
   font-display: swap;
 }
 
@@ -16,37 +18,36 @@
   font-family: "ArialItalic";
   font-weight: 400;
   font-style: italic;
-  src: url("fonts/Arial-Italic.woff2") format("woff2"), url("fonts/Arial-Italic.woff") format("woff");
+  src: url("fonts/Arial-Italic.woff2") format("woff2"),
+    url("fonts/Arial-Italic.woff") format("woff");
   font-display: swap;
 }
 
 @mixin font-family-serif {
-  font-family: Georgia, -apple-system, 'Times New Roman', Garamond, serif;
+  font-family: Georgia, -apple-system, "Times New Roman", Garamond, serif;
 }
 
 @mixin font-family-sans {
-  font-family: Arial, -apple-system, BlinkMacSystemFont, Segoe UI,
-  Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-  sans-serif;
+  font-family: Arial, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 @mixin font-family-sans-italic {
-  font-family: ArialItalic, -apple-system, BlinkMacSystemFont, Segoe UI,
-  Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-  sans-serif;
+  font-family: ArialItalic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 $color-dark-l: #545454;
-$color-dark-xl: #4C4C4C;
+$color-dark-xl: #4c4c4c;
 $color-dark-3xl: #292929;
-$color-dark-m: #B2B2B2;
-$color-dark-s: #CDCDCD;
-$color-primary: #F1CDB3;
-$color-primary-light: #FDDCC4;
-$color-light-s: #FAFAFA;
-$color-light-l: #F6F6F6;
-$color-light-xl: #FFFFFF;
-$color-background: #372C26;
+$color-dark-m: #b2b2b2;
+$color-dark-s: #cdcdcd;
+$color-primary: #f1cdb3;
+$color-primary-light: #fddcc4;
+$color-light-s: #fafafa;
+$color-light-l: #f6f6f6;
+$color-light-xl: #ffffff;
+$color-background: #372c26;
 
 html {
   scroll-behavior: smooth;
@@ -60,7 +61,13 @@ body {
   background-color: $color-dark-m;
 }
 
-h1, h2, h3, h4, h5, p, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul {
   margin: 0;
   font-weight: 400;
 }
@@ -94,7 +101,8 @@ h3 {
   letter-spacing: 0.06em;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.06em;
@@ -141,14 +149,14 @@ h5 {
     left: -5px;
     bottom: -5px;
     right: -5px;
-    content: '';
+    content: "";
   }
 
   &:after {
     position: absolute;
     left: 0;
     bottom: -3px;
-    content: '';
+    content: "";
     width: 0;
     height: 3px;
     background-color: $color-primary;
@@ -158,7 +166,8 @@ h5 {
   &:hover {
   }
 
-  &:active, &--active {
+  &:active,
+  &--active {
     &:after {
       width: 100%;
     }
@@ -167,11 +176,12 @@ h5 {
   &--dark {
     color: $color-dark-s;
 
-    &:active, &--active {
+    &:active,
+    &--active {
       color: $color-light-s;
     }
 
-    &:hover {     
+    &:hover {
       color: $color-light-s;
     }
   }
@@ -195,7 +205,7 @@ h5 {
     border: 2px $color-primary solid;
     background-color: unset;
   }
-  
+
   &--active {
     &:hover {
       background-color: $color-primary-light;
@@ -220,8 +230,8 @@ h5 {
   }
 
   &__logo {
-
-    &-title, &-subtitle {
+    &-title,
+    &-subtitle {
       transition: color 0.2s ease-out;
     }
 
@@ -242,10 +252,10 @@ h5 {
       color: $color-light-xl;
     }
 
-
     &:hover {
       & .header__logo {
-        &-title, &-subtitle {
+        &-title,
+        &-subtitle {
           color: $color-primary-light;
         }
       }
@@ -253,7 +263,8 @@ h5 {
 
     &:active {
       & .header__logo {
-        &-title, &-subtitle {
+        &-title,
+        &-subtitle {
           color: $color-light-s;
         }
       }
@@ -363,7 +374,7 @@ h5 {
 
 .section-hero {
   position: relative;
-  background-image: url('images/start-screen-texture.png');
+  background-image: url("images/start-screen-texture.png");
 
   &::before {
     position: absolute;
@@ -371,8 +382,12 @@ h5 {
     display: block;
     width: 100%;
     height: 100%;
-    background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
-    content: '';
+    background: radial-gradient(
+      100% 215.42% at 0% 0%,
+      #5b483a 0%,
+      #262425 100%
+    );
+    content: "";
   }
 
   &__container {
@@ -427,7 +442,6 @@ h5 {
     max-width: 10.6em;
     color: $color-dark-l;
   }
-
 
   &__paragraph {
     color: $color-dark-xl;
@@ -546,7 +560,7 @@ h5 {
 
 .footer {
   position: relative;
-  background-image: url('images/start-screen-texture.png');
+  background-image: url("images/start-screen-texture.png");
 
   &::before {
     position: absolute;
@@ -554,8 +568,12 @@ h5 {
     display: block;
     width: 100%;
     height: 100%;
-    background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
-    content: '';
+    background: radial-gradient(
+      100% 215.42% at 0% 0%,
+      #5b483a 0%,
+      #262425 100%
+    );
+    content: "";
   }
 
   &__container {

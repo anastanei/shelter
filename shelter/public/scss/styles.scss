@@ -163,7 +163,13 @@ h5 {
     transition: width 0.15s ease-out;
   }
 
-  &:hover {
+  &--active {
+    cursor: default;
+  }
+
+  &:hover,
+  &--active {
+    color: $color-dark-3xl;
   }
 
   &:active,
@@ -176,12 +182,12 @@ h5 {
   &--dark {
     color: $color-dark-s;
 
-    &:active,
-    &--active {
+    &:hover {
       color: $color-light-s;
     }
 
-    &:hover {
+    &:active,
+    &--active {
       color: $color-light-s;
     }
   }
@@ -270,6 +276,38 @@ h5 {
       }
     }
   }
+
+  &--secondary {
+    position: relative;
+    height: 120px;
+    background-color: $color-light-xl;
+
+    & .header__logo-title {
+      color: $color-dark-l;
+    }
+
+    & .header__logo-subtitle {
+      color: $color-dark-3xl;
+    }
+
+    & .header__logo:hover {
+      & .header__logo {
+        &-title,
+        &-subtitle {
+          color: $color-primary;
+        }
+      }
+    }
+
+    & .header__logo:active {
+      & .header__logo {
+        &-title,
+        &-subtitle {
+          color: $color-primary-light;
+        }
+      }
+    }
+  }
 }
 
 .nav {
@@ -345,6 +383,7 @@ h5 {
   align-items: center;
   width: 52px;
   height: 52px;
+  color: $color-dark-3xl;
   border: 2px solid $color-primary;
   border-radius: 100px;
   transition-property: background-color, border-color, color;
@@ -356,7 +395,8 @@ h5 {
     border-color: $color-primary-light;
   }
 
-  &:active {
+  &:active,
+  &--active {
     background-color: $color-primary;
     border-color: $color-primary;
   }
@@ -625,5 +665,32 @@ h5 {
 
   &__picture {
     display: block;
+  }
+}
+
+.section-pets-page {
+  background-color: $color-light-l;
+
+  &__container {
+    padding: 80px 0 100px;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  &__list {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
   }
 }

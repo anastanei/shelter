@@ -105,10 +105,22 @@ h2,
 }
 
 .container {
-  width: calc(100% - 80px);
+  width: calc(100% - 20px);
+  padding: 0 10px;
   max-width: 1200px;
-  padding: 0 40px;
   margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: calc(100% - 60px);
+    padding: 0 30px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    width: calc(100% - 80px);
+    padding: 0 40px;
+  }
 }
 
 .paragraph-l {

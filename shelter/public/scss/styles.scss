@@ -50,6 +50,7 @@ $color-light-xl: #ffffff;
 $color-background: #372c26;
 
 $media-mid: 768px;
+$media-max: 1280px;
 
 html {
   scroll-behavior: smooth;
@@ -136,10 +137,20 @@ h2,
 }
 
 .container {
-  width: calc(100% - 80px);
+  width: calc(100% - 20px);
+  padding: 0 10px;
   max-width: 1200px;
-  padding: 0 40px;
   margin: 0 auto;
+
+  @media (min-width: $media-mid) {
+    width: calc(100% - 60px);
+    padding: 0 30px;
+  }
+
+  @media (min-width: $media-max) {
+    width: calc(100% - 80px);
+    padding: 0 40px;
+  }
 }
 
 .paragraph-l {

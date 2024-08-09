@@ -49,6 +49,7 @@ $color-light-l: #f6f6f6;
 $color-light-xl: #ffffff;
 $color-background: #372c26;
 
+$media-mobile-l: 640px;
 $media-tablet: 768px;
 //desktop
 $media-desktop: 1024px;
@@ -401,28 +402,6 @@ h2,
   }
 }
 
-.slider {
-  position: relative;
-  box-sizing: border-box;
-  margin: 0 auto;
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  gap: 90px;
-
-  &__arrow-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -105px;
-
-    &--left {
-      left: auto;
-      right: -105px;
-    }
-  }
-}
-
 .card {
   padding-bottom: 30px;
   background-color: $color-light-s;
@@ -430,6 +409,7 @@ h2,
   transition: background-color 0.15s ease-out;
 
   &__picture {
+    width: 100%;
     margin-bottom: 24px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
@@ -438,6 +418,7 @@ h2,
   &__title {
     margin-bottom: 30px;
     display: block;
+    font-size: 20px;
     color: $color-dark-l;
   }
 
@@ -565,7 +546,7 @@ h2,
 
   &__picture {
     display: block;
-    width: 87%;
+    width: 88%;
     margin-left: auto;
 
     @media (min-width: $media-tablet) {
@@ -590,7 +571,7 @@ h2,
     width: fit-content;
 
     @media (min-width: $media-tablet) {
-      padding: 80px 0 100px;
+      padding: 83px 0 100px;
     }
 
     @media (min-width: $media-desktop) {
@@ -660,25 +641,86 @@ h2,
 
 .section-pets {
   position: relative;
-  overflow: hidden;
   background-color: $color-light-l;
 
   &__container {
     position: relative;
-    padding: 80px 0 100px;
+    padding: 42px 0;
+
+    @media (min-width: $media-mobile-l) {
+      padding: 80px 0 100px;
+    }
   }
 
   &__title {
-    margin-bottom: 60px;
+    margin-bottom: 42px;
     text-align: center;
+
+    @media (min-width: $media-mobile-l) {
+      margin-bottom: 60px;
+    }
   }
 
   &__slider {
-    margin-bottom: 60px;
+    margin-bottom: 42px;
+
+    @media (min-width: $media-mobile-l) {
+      margin-bottom: 60px;
+    }
   }
 
   &__button {
     margin: 0 auto;
+  }
+}
+
+.slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @media (min-width: $media-desktop) {
+    gap: 53px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  &__arrow-button {
+    display: none;
+  }
+
+  &__card {
+    margin: 0 auto;
+
+    @media (min-width: $media-mobile-l) {
+      width: 46.55%;
+      margin: 0;
+    }
+
+    @media (min-width: $media-desktop) {
+      width: 27.25%;
+    }
+
+    &:nth-child(2) {
+      display: none;
+
+      @media (min-width: $media-mobile-l) {
+        display: block;
+      }
+    }
+
+    &:nth-child(3) {
+      display: none;
+
+      @media (min-width: $media-desktop) {
+        display: block;
+      }
+    }
   }
 }
 

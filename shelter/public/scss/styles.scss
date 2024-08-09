@@ -345,15 +345,52 @@ h2,
       }
     }
   }
+
+  &__mobile-button {
+    position: relative;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-line {
+      width: 30px;
+      height: 2px;
+      background-color: $color-primary;
+      transition: background-color 0.2s ease-out;
+    }
+
+    &:hover {
+      & .header__mobile-button-line {
+        background-color: $color-light-s;
+      }
+    }
+
+    &:active {
+      & .header__mobile-button-line {
+        background-color: $color-primary;
+      }
+    }
+
+    @media (min-width: $media-mid) {
+      display: none;
+    }
+  }
 }
 
 .nav {
+  display: none;
+
   &__list {
     display: flex;
     align-items: center;
     padding-left: 0;
     list-style-type: none;
     gap: 36px;
+  }
+
+  @media (min-width: $media-mid) {
+    display: block;
   }
 }
 

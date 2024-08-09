@@ -474,31 +474,79 @@ h2,
   background-color: #ffffff;
 }
 .section-about__container {
-  padding: 80px 0 100px;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: center;
-  gap: 120px;
+  position: relative;
+  padding: 42px 0;
+  margin: 0 auto;
+  width: fit-content;
+}
+@media (min-width: 768px) {
+  .section-about__container {
+    padding: 80px 0 100px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-about__container {
+    margin: 0;
+    width: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 120px;
+  }
 }
 .section-about__text-area {
   max-width: 430px;
+  margin-bottom: 42px;
 }
-.section-about__text-area > * {
-  margin-bottom: 25px;
+@media (min-width: 768px) {
+  .section-about__text-area {
+    margin-bottom: 80px;
+  }
 }
-.section-about__text-area > *:last-child {
-  margin-bottom: 0;
+@media (min-width: 1024px) {
+  .section-about__text-area {
+    width: 35.8%;
+    margin-bottom: 0;
+  }
 }
 .section-about__title {
-  max-width: 10.6em;
+  margin-bottom: 25px;
   color: #545454;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .section-about__title {
+    text-align: left;
+  }
 }
 .section-about__paragraph {
+  margin-bottom: 22px;
+  padding: 0 15px;
   color: #4c4c4c;
+  text-align: justify;
+}
+@media (min-width: 768px) {
+  .section-about__paragraph {
+    margin-bottom: 25px;
+    padding: 0;
+    text-align: left;
+  }
+}
+.section-about__paragraph:last-child {
+  margin-bottom: 0;
 }
 .section-about__picture {
   display: block;
+  margin: 0 auto;
+  width: 86%;
+  max-width: 300px;
+}
+@media (min-width: 1024px) {
+  .section-about__picture {
+    width: 25%;
+    margin: 0;
+  }
 }
 
 .section-pets {

@@ -410,7 +410,7 @@ h2,
 
   &__picture {
     width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 26px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
   }
@@ -571,7 +571,7 @@ h2,
     width: fit-content;
 
     @media (min-width: $media-tablet) {
-      padding: 83px 0 100px;
+      padding: 80px 0 102px;
     }
 
     @media (min-width: $media-desktop) {
@@ -678,7 +678,15 @@ h2,
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 80px;
+  row-gap: 20px;
+
+  @media (min-width: $media-mobile-l) {
+    column-gap: 12px;
+    flex-wrap: nowrap;
+  }
 
   @media (min-width: $media-desktop) {
     gap: 53px;
@@ -691,14 +699,20 @@ h2,
   }
 
   &__arrow-button {
-    display: none;
+    order: 2;
+
+    @media (min-width: $media-mobile-l) {
+      order: unset;
+    }
   }
 
   &__card {
     margin: 0 auto;
+    min-width: 270px;
 
     @media (min-width: $media-mobile-l) {
       width: 46.55%;
+      min-width: unset;
       margin: 0;
     }
 

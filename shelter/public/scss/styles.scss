@@ -218,8 +218,13 @@ h2,
       color: $color-light-s;
     }
 
-    &:active,
-    &--active {
+    &.link--active {
+      &:hover {
+        color: $color-dark-s;
+      }
+    }
+
+    &:active {
       color: $color-light-s;
     }
   }

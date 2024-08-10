@@ -696,6 +696,11 @@ h2,
     display: flex;
     justify-content: space-between;
     flex: 1;
+    min-width: 100%;
+
+    @media (min-width: $media-mobile-l) {
+      min-width: unset;
+    }
   }
 
   &__arrow-button {

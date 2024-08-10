@@ -589,6 +589,12 @@ h2,
   display: flex;
   justify-content: space-between;
   flex: 1;
+  min-width: 100%;
+}
+@media (min-width: 640px) {
+  .slider__list {
+    min-width: unset;
+  }
 }
 .slider__arrow-button {
   order: 2;

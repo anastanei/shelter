@@ -100,8 +100,13 @@ h2,
 
 .h5 {
   font-size: 15px;
-  line-height: 1.1;
-  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+@media (min-width: 640px) {
+  .h5 {
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+  }
 }
 
 .container {
@@ -715,12 +720,62 @@ h2,
   background-color: #f6f6f6;
 }
 .section-donation__container {
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
-  justify-content: center;
-  gap: 30px;
-  padding: 79px 0 100px;
+  padding: 42px 9px;
+}
+@media (min-width: 640px) {
+  .section-donation__container {
+    padding: 79px 0 100px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-donation__container {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+.section-donation__content {
+  width: fit-content;
+  margin: 0 auto 42px;
+}
+@media (min-width: 640px) {
+  .section-donation__content {
+    margin-bottom: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-donation__content {
+    width: unset;
+    margin: 0;
+  }
+}
+.section-donation__title, .section-donation__card-intro {
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .section-donation__title, .section-donation__card-intro {
+    text-align: left;
+  }
+}
+.section-donation__card-link {
+  margin: 0 auto;
+}
+@media (min-width: 640px) {
+  .section-donation__card-link {
+    margin: 0;
+  }
+}
+.section-donation__card-footer {
+  display: block;
+  max-width: 31.7em;
+  text-align: justify;
+}
+@media (min-width: 640px) {
+  .section-donation__card-footer {
+    text-align: left;
+  }
 }
 .section-donation__content > * {
   margin-bottom: 20px;
@@ -728,9 +783,17 @@ h2,
 .section-donation__content > *:last-child {
   margin-bottom: 0;
 }
-.section-donation__card-footer {
+.section-donation__picture {
   display: block;
-  max-width: 31.7em;
+  margin: 0 auto;
+  width: 91%;
+  max-width: 505px;
+}
+@media (min-width: 1024px) {
+  .section-donation__picture {
+    margin: 0;
+    width: unset;
+  }
 }
 
 .card-link {

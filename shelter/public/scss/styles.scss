@@ -135,8 +135,12 @@ h2,
 
 .h5 {
   font-size: 15px;
-  line-height: 1.1;
-  letter-spacing: 0.06em;
+  line-height: 1.6;
+
+  @media (min-width: $media-mobile-l) {
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+  }
 }
 
 .container {
@@ -819,12 +823,59 @@ h2,
   background-color: $color-light-l;
 
   &__container {
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    justify-content: center;
-    gap: 30px;
-    padding: 79px 0 100px;
+    padding: 42px 9px;
+
+    @media (min-width: $media-mobile-l) {
+      padding: 79px 0 100px;
+    }
+
+    @media (min-width: $media-desktop) {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: center;
+      gap: 30px;
+    }
+  }
+
+  &__content {
+    width: fit-content;
+    margin: 0 auto 42px;
+
+    @media (min-width: $media-mobile-l) {
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: $media-desktop) {
+      width: unset;
+      margin: 0;
+    }
+  }
+
+  &__title,
+  &__card-intro {
+    text-align: center;
+
+    @media (min-width: $media-mobile-l) {
+      text-align: left;
+    }
+  }
+
+  &__card-link {
+    margin: 0 auto;
+    @media (min-width: $media-mobile-l) {
+      margin: 0;
+    }
+  }
+
+  &__card-footer {
+    display: block;
+    max-width: 31.7em;
+    text-align: justify;
+
+    @media (min-width: $media-mobile-l) {
+      text-align: left;
+    }
   }
 
   &__content {
@@ -837,9 +888,16 @@ h2,
     }
   }
 
-  &__card-footer {
+  &__picture {
     display: block;
-    max-width: 31.7em;
+    margin: 0 auto;
+    width: 91%;
+    max-width: 505px;
+
+    @media (min-width: $media-desktop) {
+      margin: 0;
+      width: unset;
+    }
   }
 }
 

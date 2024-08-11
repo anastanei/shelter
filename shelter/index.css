@@ -726,7 +726,7 @@ h2,
   background-color: #f6f6f6;
 }
 .section-donation__container {
-  padding: 42px 9px;
+  padding: 42px 9px 47px;
 }
 @media (min-width: 640px) {
   .section-donation__container {
@@ -845,6 +845,12 @@ h2,
     padding: 40px 0 0;
     display: flex;
     justify-content: space-between;
+    column-gap: 5vw;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__container {
+    column-gap: 160px;
   }
 }
 .footer__link-area {
@@ -887,16 +893,12 @@ h2,
     width: fit-content;
     margin-bottom: 0;
     padding: 17px 0;
-  }
-}
-@media (min-width: 1024px) {
-  .footer__container, .footer__link-area {
     column-gap: 5vw;
   }
 }
 @media (min-width: 1280px) {
-  .footer__container, .footer__link-area {
-    column-gap: 160px;
+  .footer__link-area {
+    column-gap: 150px;
   }
 }
 .footer__title {

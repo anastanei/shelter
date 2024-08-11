@@ -286,11 +286,17 @@ h2,
   background-color: #f1cdb3;
   transition: background-color 0.2s ease-out;
 }
+.header__mobile-button-line--dark {
+  background-color: #000;
+}
 .header__mobile-button:hover .header__mobile-button-line {
   background-color: #fafafa;
 }
-.header__mobile-button:active .header__mobile-button-line {
+.header__mobile-button:hover .header__mobile-button-line--dark {
   background-color: #f1cdb3;
+}
+.header__mobile-button:active .header__mobile-button-line {
+  background-color: #fddcc4;
 }
 @media (min-width: 768px) {
   .header__mobile-button {

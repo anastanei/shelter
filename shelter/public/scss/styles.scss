@@ -370,17 +370,25 @@ h2,
       height: 2px;
       background-color: $color-primary;
       transition: background-color 0.2s ease-out;
+
+      &--dark {
+        background-color: #000;
+      }
     }
 
     &:hover {
       & .header__mobile-button-line {
         background-color: $color-light-s;
+
+        &--dark {
+          background-color: $color-primary;
+        }
       }
     }
 
     &:active {
       & .header__mobile-button-line {
-        background-color: $color-primary;
+        background-color: $color-primary-light;
       }
     }
 
@@ -962,12 +970,6 @@ h2,
     & > * {
       margin-bottom: 40px;
       margin: 0 auto 40px;
-
-      // &:nth-child(5),
-      // &:nth-child(6) {
-      //   margin-right: 0;
-      //   margin-left: 0;
-      // }
 
       &:last-child {
         min-width: 300px;

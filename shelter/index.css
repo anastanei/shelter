@@ -921,23 +921,23 @@ h2,
   transition: all 0.2s ease-out;
 }
 .footer__link-text {
+  position: relative;
   font-size: 20px;
   line-height: 1.15;
   text-wrap: nowrap;
   text-align: left;
 }
 .footer__link:hover {
-  transform: scaleX(1.015);
-  color: #fddcc4;
-}
-.footer__link:hover path {
-  fill: #fddcc4;
-}
-.footer__link:active {
   color: #f6f6f6;
 }
-.footer__link:active path {
+.footer__link:hover path {
   fill: #f6f6f6;
+}
+.footer__link:active {
+  color: #fddcc4;
+}
+.footer__link:active path {
+  fill: #fddcc4;
 }
 .footer__picture {
   display: block;

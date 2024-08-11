@@ -1032,6 +1032,7 @@ h2,
     transition: all 0.2s ease-out;
 
     &-text {
+      position: relative;
       font-size: 20px;
       line-height: 1.15;
       text-wrap: nowrap;
@@ -1039,19 +1040,18 @@ h2,
     }
 
     &:hover {
-      transform: scaleX(1.015);
-      color: $color-primary-light;
-
-      & path {
-        fill: $color-primary-light;
-      }
-    }
-
-    &:active {
       color: $color-light-l;
 
       & path {
         fill: $color-light-l;
+      }
+    }
+
+    &:active {
+      color: $color-primary-light;
+
+      & path {
+        fill: $color-primary-light;
       }
     }
   }

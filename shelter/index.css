@@ -827,30 +827,93 @@ h2,
   content: "";
 }
 .footer__container {
-  padding-top: 40px;
-  display: flex;
-  justify-content: space-between;
-  gap: 160px;
+  padding-top: 30px;
+}
+@media (min-width: 640px) {
+  .footer__container {
+    padding: 30px 34px 0;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__container {
+    padding: 40px 0 0;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .footer__link-area {
+  width: 100%;
+  margin-bottom: 40px;
   align-self: flex-start;
-  width: fit-content;
-  padding-top: 17px;
-  display: grid;
-  grid-template-rows: auto auto auto;
-  grid-auto-flow: column;
-  row-gap: 32px;
-  column-gap: 160px;
+  flex-grow: 1;
+  text-align: center;
+}
+.footer__link-area > * {
+  margin-bottom: 40px;
+  margin: 0 auto 40px;
+}
+.footer__link-area > *:nth-child(5), .footer__link-area > *:nth-child(6) {
+  margin-right: 0;
+  margin-left: 0;
+}
+.footer__link-area > *:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 640px) {
+  .footer__link-area > * {
+    margin: 0;
+  }
+}
+@media (min-width: 640px) {
+  .footer__link-area {
+    margin-bottom: 65px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-auto-flow: column;
+    row-gap: 32px;
+    column-gap: 8.7%;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__link-area {
+    width: fit-content;
+    margin-bottom: 0;
+    padding: 17px 0;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__container, .footer__link-area {
+    column-gap: 5vw;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__container, .footer__link-area {
+    column-gap: 160px;
+  }
 }
 .footer__title {
+  max-width: 10.8em;
   color: #ffffff;
 }
+@media (min-width: 640px) {
+  .footer__title {
+    max-width: 8em;
+    text-align: left;
+  }
+}
 .footer__link {
+  width: fit-content;
   display: flex;
   align-items: center;
   gap: 20px;
   color: #f1cdb3;
   transition: all 0.2s ease-out;
+}
+.footer__link-text {
+  font-size: 20px;
+  line-height: 1.15;
+  text-wrap: nowrap;
+  text-align: left;
 }
 .footer__link:hover {
   transform: scaleX(1.015);
@@ -867,6 +930,19 @@ h2,
 }
 .footer__picture {
   display: block;
+  width: 86%;
+  margin: 0 auto;
+}
+@media (min-width: 640px) {
+  .footer__picture {
+    width: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__picture {
+    width: 25%;
+    margin: 0;
+  }
 }
 
 .section-pets-page {

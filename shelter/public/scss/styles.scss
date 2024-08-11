@@ -939,33 +939,96 @@ h2,
   }
 
   &__container {
-    padding-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    gap: 160px;
+    padding-top: 30px;
+
+    @media (min-width: $media-mobile-l) {
+      padding: 30px 34px 0;
+    }
+
+    @media (min-width: $media-desktop) {
+      padding: 40px 0 0;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__link-area {
+    width: 100%;
+    margin-bottom: 40px;
     align-self: flex-start;
-    width: fit-content;
-    padding-top: 17px;
-    display: grid;
-    grid-template-rows: auto auto auto;
-    grid-auto-flow: column;
-    row-gap: 32px;
-    column-gap: 160px;
+    flex-grow: 1;
+    text-align: center;
+
+    & > * {
+      margin-bottom: 40px;
+      margin: 0 auto 40px;
+
+      &:nth-child(5),
+      &:nth-child(6) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @media (min-width: $media-mobile-l) {
+        margin: 0;
+      }
+    }
+
+    @media (min-width: $media-mobile-l) {
+      margin-bottom: 65px;
+      display: grid;
+      grid-template-rows: auto auto auto;
+      grid-auto-flow: column;
+      row-gap: 32px;
+      column-gap: 8.7%;
+    }
+
+    @media (min-width: $media-desktop) {
+      width: fit-content;
+      margin-bottom: 0;
+      padding: 17px 0;
+    }
+  }
+
+  &__container,
+  &__link-area {
+    @media (min-width: $media-desktop) {
+      column-gap: 5vw;
+    }
+
+    @media (min-width: $media-max) {
+      column-gap: 160px;
+    }
   }
 
   &__title {
+    max-width: 10.8em;
     color: $color-light-xl;
+
+    @media (min-width: $media-mobile-l) {
+      max-width: 8em;
+      text-align: left;
+    }
   }
 
   &__link {
+    width: fit-content;
     display: flex;
     align-items: center;
     gap: 20px;
     color: $color-primary;
     transition: all 0.2s ease-out;
+
+    &-text {
+      font-size: 20px;
+      line-height: 1.15;
+      text-wrap: nowrap;
+      text-align: left;
+    }
 
     &:hover {
       transform: scaleX(1.015);
@@ -987,6 +1050,17 @@ h2,
 
   &__picture {
     display: block;
+    width: 86%;
+    margin: 0 auto;
+
+    @media (min-width: $media-mobile-l) {
+      width: unset;
+    }
+
+    @media (min-width: $media-desktop) {
+      width: 25%;
+      margin: 0;
+    }
   }
 }
 

@@ -275,6 +275,7 @@ h2,
 }
 .header__mobile-button {
   position: relative;
+  display: block;
   height: 22px;
   display: flex;
   flex-direction: column;

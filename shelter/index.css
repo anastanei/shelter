@@ -1006,13 +1006,19 @@ h2,
 }
 @media (min-width: 640px) {
   .section-pets-page__list {
-    padding: 0 64px;
+    padding: 0 44px;
+  }
+}
+@media (min-width: 768px) {
+  .section-pets-page__list {
+    justify-content: space-around;
   }
 }
 @media (min-width: 1024px) {
   .section-pets-page__list {
     margin-bottom: 60px;
     padding: 0;
+    justify-content: space-between;
   }
 }
 .section-pets-page__list-item {

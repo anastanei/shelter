@@ -52,7 +52,6 @@ $color-background: #372c26;
 $media-mobile-x: 480px;
 $media-mobile-l: 640px;
 $media-tablet: 768px;
-//desktop
 $media-desktop: 1024px;
 $media-max: 1280px;
 
@@ -1118,12 +1117,17 @@ h2,
     }
 
     @media (min-width: $media-mobile-l) {
-      padding: 0 64px;
+      padding: 0 44px;
+    }
+
+    @media (min-width: $media-tablet) {
+      justify-content: space-around;
     }
 
     @media (min-width: $media-desktop) {
       margin-bottom: 60px;
       padding: 0;
+      justify-content: space-between;
     }
   }
 

@@ -963,13 +963,14 @@ h2,
       margin-bottom: 40px;
       margin: 0 auto 40px;
 
-      &:nth-child(5),
-      &:nth-child(6) {
-        margin-right: 0;
-        margin-left: 0;
-      }
+      // &:nth-child(5),
+      // &:nth-child(6) {
+      //   margin-right: 0;
+      //   margin-left: 0;
+      // }
 
       &:last-child {
+        min-width: 300px;
         margin-bottom: 0;
       }
 
@@ -1051,6 +1052,7 @@ h2,
   &__picture {
     display: block;
     width: 86%;
+    max-width: 300px;
     margin: 0 auto;
 
     @media (min-width: $media-mobile-l) {

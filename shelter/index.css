@@ -852,11 +852,8 @@ h2,
   margin-bottom: 40px;
   margin: 0 auto 40px;
 }
-.footer__link-area > *:nth-child(5), .footer__link-area > *:nth-child(6) {
-  margin-right: 0;
-  margin-left: 0;
-}
 .footer__link-area > *:last-child {
+  min-width: 300px;
   margin-bottom: 0;
 }
 @media (min-width: 640px) {
@@ -931,6 +928,7 @@ h2,
 .footer__picture {
   display: block;
   width: 86%;
+  max-width: 300px;
   margin: 0 auto;
 }
 @media (min-width: 640px) {

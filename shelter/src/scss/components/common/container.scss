@@ -1,0 +1,16 @@
+.container {
+  width: calc(100% - 20px);
+  padding: 0 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: $media-tablet) {
+    width: calc(100% - 60px);
+    padding: 0 30px;
+  }
+
+  @media (min-width: $media-desktop) {
+    width: calc(100% - 80px);
+    padding: 0 40px;
+  }
+}

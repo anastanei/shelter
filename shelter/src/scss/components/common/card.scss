@@ -1,0 +1,41 @@
+.card {
+  padding-bottom: 30px;
+  background-color: $color-light-s;
+  border-radius: 9px;
+  transition: background-color 0.15s ease-out;
+
+  &__picture {
+    display: block;
+    width: 100%;
+    margin-bottom: 26px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    display: block;
+    font-size: 20px;
+    color: $color-dark-l;
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  &:hover {
+    background-color: $color-light-xl;
+
+    & .button {
+      background-color: $color-primary-light;
+      border-color: $color-primary-light;
+    }
+  }
+
+  &:active {
+    & .button {
+      background-color: $color-light-l;
+      border-color: $color-light-l;
+    }
+  }
+}

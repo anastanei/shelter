@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon index.js ",
     "lint": "npx eslint index.js",
-    "style": "sass --watch public/scss/styles.scss index.css",
+    "style": "sass --watch src/scss:public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

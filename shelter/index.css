@@ -109,6 +109,11 @@ h2,
   }
 }
 
+.img-in-picture {
+  display: block;
+  width: 100%;
+}
+
 .container {
   width: calc(100% - 20px);
   padding: 0 10px;
@@ -328,6 +333,7 @@ h2,
   transition: background-color 0.15s ease-out;
 }
 .card__picture {
+  display: block;
   width: 100%;
   margin-bottom: 26px;
   border-top-left-radius: 9px;

@@ -146,6 +146,7 @@ h2,
 .img-in-picture {
   display: block;
   width: 100%;
+  pointer-events: none;
 }
 
 .container {
@@ -925,6 +926,7 @@ h2,
   background-color: $color-primary;
   border-radius: 9px;
   transition: background-color 0.2s ease-out;
+  text-wrap: nowrap;
 
   &:hover {
     background-color: $color-primary-light;

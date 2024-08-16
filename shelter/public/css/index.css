@@ -303,7 +303,7 @@ h2,
 
 .footer {
   position: relative;
-  background-image: url("/public/images/start-screen-texture.png");
+  background-image: url("../images/start-screen-texture.png");
 }
 .footer::before {
   position: absolute;
@@ -531,7 +531,7 @@ h2,
 
 .section-hero {
   position: relative;
-  background-image: url("/public/images/start-screen-texture.png");
+  background-image: url("../images/start-screen-texture.png");
 }
 .section-hero::before {
   position: absolute;

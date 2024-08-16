@@ -64,6 +64,7 @@ body {
 .img-in-picture {
   display: block;
   width: 100%;
+  height: auto;
   pointer-events: none;
 }
 

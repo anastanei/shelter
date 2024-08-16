@@ -33,20 +33,20 @@ a {
 @font-face {
   font-family: "Georgia";
   font-weight: 400;
-  src: url("/public/fonts/Georgia.woff2") format("woff2"), url("/public/fonts/Georgia.woff") format("woff");
+  src: url("../../public/fonts/Georgia.woff2") format("woff2"), url("../../public/fonts/Georgia.woff") format("woff");
   font-display: swap;
 }
 @font-face {
   font-family: "Arial";
   font-weight: 400;
-  src: url("/public/fonts/ArialMT.woff2") format("woff2"), url("/public/fonts/ArialMT.woff") format("woff");
+  src: url("../../public/fonts/ArialMT.woff2") format("woff2"), url("../../public/fonts/ArialMT.woff") format("woff");
   font-display: swap;
 }
 @font-face {
   font-family: "ArialItalic";
   font-weight: 400;
   font-style: italic;
-  src: url("/public/fonts/Arial-Italic.woff2") format("woff2"), url("/public/fonts/Arial-Italic.woff") format("woff");
+  src: url("../../public/fonts/Arial-Italic.woff2") format("woff2"), url("../../public/fonts/Arial-Italic.woff") format("woff");
   font-display: swap;
 }
 html {
@@ -66,5 +66,3 @@ body {
   width: 100%;
   pointer-events: none;
 }
-
-/*# sourceMappingURL=global.css.map */

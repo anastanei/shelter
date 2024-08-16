@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js ",
-    "lint": "npx eslint index.js",
-    "style": "sass --watch src/scss:public/css",
+    "start": "nodemon ./public/js/index.js",
+    "lint": "npx eslint ./public/js/index.js",
+    "style": "sass --watch --no-source-map src/scss:public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

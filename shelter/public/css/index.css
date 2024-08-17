@@ -13,6 +13,10 @@ ul {
   padding: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
 button {
   display: block;
   padding: 0;
@@ -196,6 +200,11 @@ h2,
 .link--dark:active {
   color: #fafafa;
 }
+.link--mobile {
+  font-family: Arial, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 32px;
+  line-height: 1.6;
+}
 
 .header {
   position: absolute;
@@ -254,13 +263,23 @@ h2,
 .header--secondary .header__logo:active .header__logo-title, .header--secondary .header__logo:active .header__logo-subtitle {
   color: #fddcc4;
 }
+.header__mobile-nav {
+  display: block;
+}
+@media (min-width: 768px) {
+  .header__mobile-nav {
+    display: none;
+  }
+}
 .header__mobile-button {
   position: relative;
+  z-index: 1;
   display: block;
   height: 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.2s ease-out;
 }
 .header__mobile-button-line {
   width: 30px;
@@ -280,6 +299,9 @@ h2,
 .header__mobile-button:active .header__mobile-button-line {
   background-color: #fddcc4;
 }
+.header__mobile-button.--opened {
+  transform: rotate(90deg);
+}
 @media (min-width: 768px) {
   .header__mobile-button {
     display: none;
@@ -293,13 +315,57 @@ h2,
   display: flex;
   align-items: center;
   padding-left: 0;
-  list-style-type: none;
   gap: 36px;
 }
 @media (min-width: 768px) {
   .nav {
     display: block;
   }
+}
+
+.mobile-nav {
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  height: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+.mobile-nav.--visible {
+  opacity: 1;
+  overflow: visible;
+}
+.mobile-nav.--visible .mobile-nav__list {
+  transform: translateX(-200px);
+}
+.mobile-nav::before {
+  position: absolute;
+  right: 0;
+  display: block;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(41, 41, 41, 0.6);
+  content: "";
+}
+.mobile-nav__list {
+  position: relative;
+  right: -200px;
+  height: calc(100% - 86px);
+  padding: 43px 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background-color: #292929;
+  transition: transform 0.2s ease-out;
+}
+.mobile-nav__list--light {
+  background-color: #ffffff;
 }
 
 .footer {

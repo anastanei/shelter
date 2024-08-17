@@ -36,7 +36,7 @@
           <div class="header__logo-title">Cozy House</div>
           <div class="header__logo-subtitle">Shelter for pets in Boston</div>
         </a>
-        <nav class="header__nav nav nav--dark">
+        <nav class="header__nav nav">
           <ul class="nav__list">
             <li class="nav__item">
               <a href="../../index.html" class="nav__link link paragraph-l">About the shelter</a>
@@ -52,11 +52,29 @@
             </li>
           </ul>
         </nav>
-        <button class="header__mobile-button" aria-label="Mobile menu">
+        <button class="header__mobile-button" aria-label="Mobile menu" data-menu-button>
           <span class="header__mobile-button-line header__mobile-button-line--dark"></span>
           <span class="header__mobile-button-line header__mobile-button-line--dark"></span>
           <span class="header__mobile-button-line header__mobile-button-line--dark"></span>
         </button>
+        <nav class="header__mobile-nav mobile-nav" data-menu>
+          <ul class="mobile-nav__list mobile-nav__list--light">
+            <li class="mobile-nav__item">
+              <a href="../../index.html" class="mobile-nav__link link link--mobile paragraph-l">About the shelter</a>
+            </li>
+            <li class="mobile-nav__item">
+              <a href="../pages/pets.html" class="mobile-nav__link link link--mobile paragraph-l link--active">Our
+                pets</a>
+            </li>
+            <li class="mobile-nav__item">
+              <a href="../../index.html#help" class="mobile-nav__link link link--mobile paragraph-l">Help the
+                shelter</a>
+            </li>
+            <li class="mobile-nav__item">
+              <a href="#footer" class="mobile-nav__link link link--mobile paragraph-l">Contacts</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>

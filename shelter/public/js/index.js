@@ -8,43 +8,29 @@
 //     * область, свободная от бургер-меню, затемняется: +2
 //     * при нажатии на бургер-иконку, справа плавно появляется адаптивное меню шириной 320px, бургер-иконка плавно поворачивается на 90 градусов: +4
 //     * страница под бургер-меню не прокручивается: +4
-
 //     * при повторном нажатии на бургер-иконку или на свободное от бургер-меню пространство (оба варианта должны быть реализованы) адаптивное меню плавно скрывается уезжая за правую часть экрана, бургер-иконка плавно поворачивается на 90 градусов обратно: +4
 //     * ссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям, сохраняются заданные на первом этапе выполнения задания требования интерактивности элементов меню: +2
 //     * при клике по любой ссылке (интерактивной или неинтерактивной) в меню адаптивное меню плавно скрывается вправо, бургер-иконка поворачивается на 90 градусов обратно: +2
 
-function scrollLock () {
-  document.body.classList.add('--scroll-locked');
+function toggleScrollLock (isLocked) {
+  document.body.classList.toggle('--scroll-locked', isLocked);
 }
 
-function scrollUnlock () {
-  document.body.classList.remove('--scroll-locked');
+function toggleMenu (menuButton, menu) {
+  const isOpened = menu.classList.toggle('--visible');
+  menuButton.classList.toggle('--opened', isOpened);
+  toggleScrollLock(isOpened);
 }
-
-// function toggleScrollLock (isLocked) {
-//   document.body.classList.toggle('--scroll-locked', isLocked);
-// }
 
 function menu (menuSelector, buttonSelector, overlaySelector) {
   const menu = document.querySelector(menuSelector);
   const menuButton = document.querySelector(buttonSelector);
-  const overlay = document.querySelector(overlaySelector);
-  menuButton.addEventListener('click', () => openMenu(menuButton, menu, overlay), { once: true });
-}
-
-function openMenu (menuButton, menu, overlay) {
-  menu.classList.add('--visible');
-  menuButton.classList.add('--opened');
-  scrollLock();
-  menuButton.addEventListener(('click'), () => closeMenu(menuButton, menu, overlay), { once: true });
-  overlay.addEventListener(('click'), () => closeMenu(menuButton, menu, overlay), { once: true });
-}
-
-function closeMenu (menuButton, menu, overlay) {
-  menu.classList.remove('--visible');
-  menuButton.classList.remove('--opened');
-  scrollUnlock();
-  menuButton.addEventListener('click', () => openMenu(menuButton, menu, overlay), { once: true });
+  const overlay = menu.querySelector(overlaySelector);
+  const toggle = () => toggleMenu(menuButton, menu);
+  menuButton.addEventListener('click', toggle);
+  overlay.addEventListener('click', toggle);
+  const links = menu.querySelectorAll('[data-menu-link]');
+  links.forEach(link => link.addEventListener('click', toggle));
 }
 
 menu('[data-menu]', '[data-menu-button]', '[data-menu-overlay]');

@@ -64,6 +64,9 @@ body {
   color: #545454;
   background-color: #b2b2b2;
 }
+body.--scroll-locked {
+  overflow: hidden;
+}
 
 .img-in-picture {
   display: block;

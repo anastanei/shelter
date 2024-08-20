@@ -13,15 +13,38 @@
 //     * ссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям, сохраняются заданные на первом этапе выполнения задания требования интерактивности элементов меню: +2
 //     * при клике по любой ссылке (интерактивной или неинтерактивной) в меню адаптивное меню плавно скрывается вправо, бургер-иконка поворачивается на 90 градусов обратно: +2
 
-function mobileMenu (buttonSelector, menuSelector) {
-  const menuButton = document.querySelector(buttonSelector);
-  const menu = document.querySelector(menuSelector);
-  const element = document.body;
-  menuButton.addEventListener('click', () => {
-  menu.classList.toggle('--visible');
-  menuButton.classList.toggle('--opened');
-  element.style.overflow = element.style.overflow === 'hidden' ? '' : 'hidden';
-  });
+function scrollLock () {
+  document.body.classList.add('--scroll-locked');
 }
 
-mobileMenu('[data-menu-button]', '[data-menu]');
+function scrollUnlock () {
+  document.body.classList.remove('--scroll-locked');
+}
+
+// function toggleScrollLock (isLocked) {
+//   document.body.classList.toggle('--scroll-locked', isLocked);
+// }
+
+function menu (menuSelector, buttonSelector, overlaySelector) {
+  const menu = document.querySelector(menuSelector);
+  const menuButton = document.querySelector(buttonSelector);
+  const overlay = document.querySelector(overlaySelector);
+  menuButton.addEventListener('click', () => openMenu(menuButton, menu, overlay), { once: true });
+}
+
+function openMenu (menuButton, menu, overlay) {
+  menu.classList.add('--visible');
+  menuButton.classList.add('--opened');
+  scrollLock();
+  menuButton.addEventListener(('click'), () => closeMenu(menuButton, menu, overlay), { once: true });
+  overlay.addEventListener(('click'), () => closeMenu(menuButton, menu, overlay), { once: true });
+}
+
+function closeMenu (menuButton, menu, overlay) {
+  menu.classList.remove('--visible');
+  menuButton.classList.remove('--opened');
+  scrollUnlock();
+  menuButton.addEventListener('click', () => openMenu(menuButton, menu, overlay), { once: true });
+}
+
+menu('[data-menu]', '[data-menu-button]', '[data-menu-overlay]');

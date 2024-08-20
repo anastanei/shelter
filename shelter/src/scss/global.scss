@@ -13,6 +13,10 @@ body {
   font-weight: 400;
   color: $color-dark-l;
   background-color: $color-dark-m;
+
+  &.--scroll-locked {
+    overflow: hidden;
+  }
 }
 
 .img-in-picture {

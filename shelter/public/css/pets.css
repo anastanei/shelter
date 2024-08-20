@@ -64,6 +64,9 @@ body {
   color: #545454;
   background-color: #b2b2b2;
 }
+body.--scroll-locked {
+  overflow: hidden;
+}
 
 .img-in-picture {
   display: block;
@@ -328,7 +331,7 @@ h2,
   overflow: hidden;
   right: 0;
   top: 0;
-  min-width: 320px;
+  width: 0;
   min-height: 100vh;
   height: 100%;
   box-sizing: border-box;
@@ -337,15 +340,19 @@ h2,
 }
 .mobile-nav.--visible {
   opacity: 1;
+  width: unset;
   overflow: visible;
 }
 .mobile-nav.--visible .mobile-nav__list {
-  transform: translateX(-200px);
+  transform: translateX(-100%);
 }
-.mobile-nav::before {
+.mobile-nav.--visible .mobile-nav__overlay {
+  display: block;
+}
+.mobile-nav__overlay {
   position: absolute;
   right: 0;
-  display: block;
+  display: none;
   min-width: 100vw;
   min-height: 100vh;
   background-color: rgba(41, 41, 41, 0.6);
@@ -353,7 +360,7 @@ h2,
 }
 .mobile-nav__list {
   position: relative;
-  right: -200px;
+  right: -100%;
   height: calc(100% - 86px);
   padding: 43px 38px;
   display: flex;

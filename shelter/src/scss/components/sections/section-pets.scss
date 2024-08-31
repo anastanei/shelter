@@ -72,16 +72,16 @@
 
   &__card {
     margin: 0 auto;
-    min-width: 270px;
+    // min-width: 270px;
 
     @media (min-width: $media-mobile-l) {
-      width: 46.55%;
-      min-width: unset;
+      // width: 46.55%;
+      // min-width: unset;
       margin: 0;
     }
 
     @media (min-width: $media-desktop) {
-      width: 27.25%;
+      // width: 27.25%;
     }
 
     &:nth-child(2) {

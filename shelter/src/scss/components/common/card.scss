@@ -1,20 +1,10 @@
 .card {
   position: relative;
+  width: 270px;
   padding-bottom: 30px;
   background-color: $color-light-s;
   border-radius: 9px;
   transition: background-color 0.15s ease-out;
-
-  // &::after {
-  //   position: absolute;
-  //   z-index: 0;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   cursor: pointer;
-  //   content: "";
-  // }
 
   &__picture {
     display: block;

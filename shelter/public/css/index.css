@@ -586,6 +586,7 @@ h2,
 
 .card {
   position: relative;
+  width: 270px;
   padding-bottom: 30px;
   background-color: #fafafa;
   border-radius: 9px;
@@ -1020,18 +1021,10 @@ h2,
 }
 .slider__card {
   margin: 0 auto;
-  min-width: 270px;
 }
 @media (min-width: 640px) {
   .slider__card {
-    width: 46.55%;
-    min-width: unset;
     margin: 0;
-  }
-}
-@media (min-width: 1024px) {
-  .slider__card {
-    width: 27.25%;
   }
 }
 .slider__card:nth-child(2) {

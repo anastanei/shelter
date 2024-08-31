@@ -4,7 +4,7 @@
   &__container {
     padding: 42px 0;
 
-    @media (min-width: $media-mobile-x) {
+    @media (min-width: $media-mobile-l) {
       padding: 80px 0 76px;
     }
 
@@ -17,7 +17,7 @@
     margin-bottom: 42px;
     text-align: center;
 
-    @media (min-width: $media-mobile-x) {
+    @media (min-width: $media-mobile-l) {
       margin-bottom: 30px;
     }
 
@@ -33,21 +33,17 @@
     align-items: center;
     row-gap: 30px;
 
-    @media (min-width: $media-mobile-x) {
+    @media (min-width: $media-mobile-l) {
       margin-bottom: 40px;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
       flex-wrap: wrap;
       row-gap: 30px;
       column-gap: 10px;
     }
 
-    @media (min-width: $media-mobile-l) {
-      padding: 0 44px;
-    }
-
     @media (min-width: $media-tablet) {
-      justify-content: space-around;
+      padding: 0 44px;
     }
 
     @media (min-width: $media-desktop) {
@@ -64,8 +60,8 @@
       display: none;
     }
 
-    @media (min-width: $media-mobile-x) {
-      width: 46.55%;
+    @media (min-width: $media-mobile-l) {
+      // width: 46.55%;
 
       &:nth-child(n + 4):nth-child(-n + 6) {
         display: block;
@@ -73,7 +69,7 @@
     }
 
     @media (min-width: $media-desktop) {
-      width: 22.5%;
+      // width: 22.5%;
 
       &:nth-child(n + 7) {
         display: block;
@@ -86,7 +82,7 @@
     justify-content: center;
     gap: 10px;
 
-    @media (min-width: $media-mobile-x) {
+    @media (min-width: $media-mobile-l) {
       gap: 20px;
     }
   }

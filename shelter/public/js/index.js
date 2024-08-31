@@ -12,39 +12,79 @@
 //     * ссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям, сохраняются заданные на первом этапе выполнения задания требования интерактивности элементов меню: +2
 //     * при клике по любой ссылке (интерактивной или неинтерактивной) в меню адаптивное меню плавно скрывается вправо, бургер-иконка поворачивается на 90 градусов обратно: +2
 // Реализация попап на обеих страницах: +12
-// попап появляется при нажатии на любое место карточки с описанием конкретного животного: +2
+// + попап появляется при нажатии на любое место карточки с описанием конкретного животного: +2
 // + часть страницы вне попапа затемняется: +2
 // + при открытии попапа вертикальный скролл страницы становится неактивным, при закрытии - снова активным: +2
 // + при нажатии на область вокруг попапа или на кнопку с крестиком попап закрывается (оба варианта должны быть реализованы), при этом при нажатии на сам попап ничего не происходит: +2
 // + кнопка с крестиком интерактивная: +2
-// окно попапа (не считая кнопку с крестиком) центрировано по всем осям, размеры элементов попапа и их расположение совпадают с макетом: +2
+// + окно попапа (не считая кнопку с крестиком) центрировано по всем осям, размеры элементов попапа и их расположение совпадают с макетом: +2
 
 
-function toggleScrollLock (isLocked) {
-  document.body.classList.toggle('--scroll-locked', isLocked);
-}
-
-function toggleModal (modalButton, modal) {
-  const isOpened = modal.classList.toggle('--visible');
-  modalButton.classList.toggle('--opened', isOpened);
-  toggleScrollLock(isOpened);
-}
-
-function modal (modalSelector, buttonSelector, overlaySelector, buttonCloseSelector = false, linkSelector = false) {
-  const modal = document.querySelector(modalSelector);
-  const modalButton = document.querySelector(buttonSelector);
-  const overlay = modal.querySelector(overlaySelector);
-  const closeButton = buttonCloseSelector && modal.querySelector(buttonCloseSelector);
-  const toggle = () => toggleModal(modalButton, modal);
-  if (closeButton != false) {
-    closeButton.addEventListener('click', toggle);
+class Modal {
+  constructor(modalSelector, buttonSelector, overlaySelector, buttonCloseSelector = false, linkSelector = false) {
+      this.modal = document.querySelector(modalSelector);
+      this.modalButton = document.querySelector(buttonSelector);
+      this.overlay = this.modal.querySelector(overlaySelector);
+      this.closeButton = buttonCloseSelector && this.modal ? this.modal.querySelector(buttonCloseSelector) : undefined;
+      this.links = linkSelector && this.modal ? this.modal.querySelectorAll(linkSelector) : [];
+      this.toggle = this.toggle.bind(this);
+      this.init();
   }
-  overlay.addEventListener('click', toggle);
-  modalButton.addEventListener('click', toggle);
-  overlay.addEventListener('click', toggle);
-  const links = linkSelector && modal.querySelectorAll(linkSelector);
-  links && links.forEach(link => link.addEventListener('click', toggle));
+
+  init() {
+    const elements = [
+      this.closeButton,
+      this.overlay,
+      this.modalButton,
+      ...this.links
+    ];
+    elements.forEach(element => {
+      if (element) {
+        element.addEventListener('click', this.toggle);
+      }
+    });
+  }
+
+  toggle() {
+    const isOpened = this.modal.classList.toggle('--visible');
+    this.modalButton.classList.toggle('--opened', isOpened);
+    this.toggleScrollLock(isOpened);
+  }
+
+  toggleScrollLock(isLocked) {
+    document.body.classList.toggle('--scroll-locked', isLocked);
+  }
 }
 
-modal('[data-menu]', '[data-menu-button]', '[data-menu-overlay]', false, '[data-menu-link]');
-modal('[data-popup]', '[data-popup-open-button]', '[data-popup-overlay]', '[data-popup-close-button]');
+new Modal('[data-menu]', '[data-menu-button]', '[data-menu-overlay]', false, '[data-menu-link]');
+new Modal('[data-popup]', '[data-popup-open-button]', '[data-popup-overlay]', '[data-popup-close-button]');
+
+// function toggleScrollLock (isLocked) {
+//   document.body.classList.toggle('--scroll-locked', isLocked);
+// }
+
+// function toggleModal (modalButton, modal) {
+//   const isOpened = modal.classList.toggle('--visible');
+//   modalButton.classList.toggle('--opened', isOpened);
+//   toggleScrollLock(isOpened);
+// }
+
+// function modal (modalSelector, buttonSelector, overlaySelector, buttonCloseSelector = false, linkSelector = false) {
+//   const modal = document.querySelector(modalSelector);
+//   const modalButton = document.querySelector(buttonSelector);
+//   const overlay = modal.querySelector(overlaySelector);
+//   const closeButton = buttonCloseSelector && modal.querySelector(buttonCloseSelector);
+//   const links = linkSelector && modal.querySelectorAll(linkSelector);
+//   const toggle = () => toggleModal(modalButton, modal);
+
+//   if (closeButton != false) {
+//     closeButton.addEventListener('click', toggle);
+//   }
+//   overlay.addEventListener('click', toggle);
+//   modalButton.addEventListener('click', toggle);
+//   overlay.addEventListener('click', toggle);
+//   links && links.forEach(link => link.addEventListener('click', toggle));
+// }
+
+// modal('[data-menu]', '[data-menu-button]', '[data-menu-overlay]', false, '[data-menu-link]');
+// modal('[data-popup]', '[data-popup-open-button]', '[data-popup-overlay]', '[data-popup-close-button]');

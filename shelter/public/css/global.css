@@ -75,6 +75,9 @@ body {
 body.--scroll-locked {
   overflow: hidden;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 
 .img-in-picture {
   display: block;

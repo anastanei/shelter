@@ -32,12 +32,16 @@ h2,
 }
 
 .h5 {
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
 
-  @media (min-width: $media-mobile-l) {
-    line-height: 1.1;
-    letter-spacing: 0.06em;
+  // @media (min-width: $media-mobile-l) {
+  // }
+
+  @media (min-width: $media-desktop) {
+    line-height: 1.13;
+    font-size: 15px;
   }
 }
 .paragraph-l {

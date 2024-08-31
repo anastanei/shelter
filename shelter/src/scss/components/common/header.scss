@@ -227,21 +227,23 @@
 }
 
 .mobile-nav {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   right: 0;
   top: 0;
-  width: 0;
+  // width: 0;
   min-height: 100vh;
   height: 100%;
   box-sizing: border-box;
   opacity: 0;
-  transition: opacity 0.2s ease-out;
+  transition: visibility 0s 0.3s linear;
+  transition: opacity 0.4s ease-out;
 
   &.--visible {
     opacity: 1;
     width: unset;
     overflow: visible;
+    visibility: unset;
 
     & .mobile-nav__list {
       transform: translateX(-100%);

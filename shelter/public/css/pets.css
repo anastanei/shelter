@@ -41,6 +41,12 @@ a {
   font-display: swap;
 }
 @font-face {
+  font-family: "Georgia";
+  font-weight: 700;
+  src: url("../../public/fonts/Georgia-Bold.woff2") format("woff2"), url("../../public/fonts/Georgia-Bold.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
   font-family: "Arial";
   font-weight: 400;
   src: url("../../public/fonts/ArialMT.woff2") format("woff2"), url("../../public/fonts/ArialMT.woff") format("woff");
@@ -63,9 +69,14 @@ body {
   font-weight: 400;
   color: #545454;
   background-color: #b2b2b2;
+  overflow-y: auto;
+  -ms-overflow-style: none;
 }
 body.--scroll-locked {
   overflow: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .img-in-picture {
@@ -113,13 +124,14 @@ h2,
 }
 
 .h5 {
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
 }
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
   .h5 {
-    line-height: 1.1;
-    letter-spacing: 0.06em;
+    line-height: 1.13;
+    font-size: 15px;
   }
 }
 
@@ -327,21 +339,22 @@ h2,
 }
 
 .mobile-nav {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   right: 0;
   top: 0;
-  width: 0;
   min-height: 100vh;
   height: 100%;
   box-sizing: border-box;
   opacity: 0;
-  transition: opacity 0.2s ease-out;
+  transition: visibility 0s 0.3s linear;
+  transition: opacity 0.4s ease-out;
 }
 .mobile-nav.--visible {
   opacity: 1;
   width: unset;
   overflow: visible;
+  visibility: unset;
 }
 .mobile-nav.--visible .mobile-nav__list {
   transform: translateX(-100%);
@@ -572,6 +585,7 @@ h2,
 }
 
 .card {
+  position: relative;
   padding-bottom: 30px;
   background-color: #fafafa;
   border-radius: 9px;
@@ -587,11 +601,22 @@ h2,
 .card__title {
   margin-bottom: 30px;
   display: block;
+  text-align: center;
   font-size: 20px;
   color: #545454;
 }
 .card__button {
+  position: relative;
   margin: 0 auto;
+}
+.card__button::after {
+  position: absolute;
+  left: -43px;
+  bottom: -32px;
+  display: block;
+  width: 270px;
+  height: 431px;
+  content: "";
 }
 .card:hover {
   background-color: #ffffff;
@@ -603,6 +628,159 @@ h2,
 .card:active .button {
   background-color: #f6f6f6;
   border-color: #f6f6f6;
+}
+
+.popup {
+  position: fixed;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+.popup.--visible {
+  opacity: 100%;
+}
+.popup__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(41, 41, 41, 0.7);
+  content: "";
+  visibility: hidden;
+  transition: visibility 0.3s ease-out;
+}
+.popup.--visible .popup__overlay {
+  visibility: unset;
+}
+.popup__container {
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: clamp(240px, 71%, 900px);
+  display: flex;
+  background-color: #fafafa;
+  border-radius: 9px;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  transition: visibility 0.3s ease-out;
+}
+@media (min-width: 1024px) {
+  .popup__container {
+    width: clamp(240px, 70.5%, 900px);
+  }
+}
+.popup.--visible .popup__container {
+  visibility: unset;
+}
+.popup__button {
+  position: absolute;
+  top: -54px;
+  right: -33px;
+}
+@media (min-width: 640px) {
+  .popup__button {
+    top: -52px;
+    right: -42px;
+  }
+}
+.popup__picture {
+  display: none;
+  min-width: 55.5%;
+}
+@media (min-width: 768px) {
+  .popup__picture {
+    display: block;
+  }
+}
+.popup__picture .img-in-picture {
+  border-radius: 9px;
+}
+.popup__content {
+  padding: 10px;
+}
+@media (min-width: 1024px) {
+  .popup__content {
+    padding: 50px 20px 50px 29px;
+  }
+}
+.popup__name {
+  margin-bottom: 10px;
+  font-size: 35px;
+}
+.popup__race {
+  font-size: 20px;
+}
+.popup__text {
+  text-align: justify;
+}
+@media (min-width: 768px) {
+  .popup__text {
+    text-align: left;
+  }
+}
+.popup__race, .popup__name {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .popup__race, .popup__name {
+    text-align: left;
+  }
+}
+.popup__race, .popup__text {
+  margin-bottom: 20px;
+}
+@media (min-width: 1024px) {
+  .popup__race, .popup__text {
+    margin-bottom: 40px;
+  }
+}
+.popup__feature-item {
+  position: relative;
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 1;
+}
+.popup__feature-item::before {
+  position: relative;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background-color: #f1cdb3;
+  content: "";
+}
+.popup__feature-name {
+  font-weight: 700;
+}
+.popup.--visible {
+  opacity: 100%;
+}
+
+.cross-icon {
+  position: relative;
+  width: 17px;
+  height: 17px;
+}
+.cross-icon::before, .cross-icon::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #292929;
+  transform-origin: center;
+  content: "";
+}
+.cross-icon::before {
+  transform: rotate(45deg);
+}
+.cross-icon::after {
+  transform: rotate(-45deg);
 }
 
 .section-pets-page {

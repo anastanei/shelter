@@ -7,15 +7,26 @@ html {
   scroll-behavior: smooth;
 }
 
+// * {
+//   scrollbar-width: thin;
+//   scrollbar-color: $color-dark-3xl $color-dark-l;
+// }
+
 body {
   @include font-family-serif;
   position: relative;
   font-weight: 400;
   color: $color-dark-l;
   background-color: $color-dark-m;
+  overflow-y: auto;
+  -ms-overflow-style: none;
 
   &.--scroll-locked {
     overflow: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 

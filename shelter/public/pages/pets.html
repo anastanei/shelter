@@ -89,15 +89,20 @@
           Our friends who<br>are looking for a house
         </h1>
         <div class="section-pets-page__list">
-          <button class="section-pets-page__list-item card" aria-label="Learn more">
+          <article class="section-pets-page__list-item card" aria-label="Learn more">
             <picture class="card__picture">
               <source srcset="../images/pets/pets-katrine.avif" type="image/avif">
               <source srcset="../images/pets/pets-katrine.webp" type="image/webp">
               <img class="img-in-picture" src="../images/pets/pets-katrine.jpg" alt="Grey cat" width="270" height="270">
             </picture>
             <span class="card__title h4">Katrine</span>
-            <span class="button button--secondary card__button">Learn more</span>
-          </button>
+            <button class="button button--secondary card__button" type="button" data-popup-open-button>Learn
+              more
+            </button>
+            <!-- <button class="card__button" type="button" data-popup-open-button>
+                          <div class="button button--secondary">Learn more</div>
+                        </button> -->
+          </article>
           <button class="section-pets-page__list-item card" aria-label="Learn more">
             <picture class="card__picture">
               <source srcset="../images/pets/pets-jennifer.avif" type="image/avif">
@@ -260,6 +265,46 @@
       </div>
     </div>
   </footer>
+  <div class="popup" data-popup>
+    <div class="popup__overlay overlay" data-popup-overlay></div>
+    <div class="popup__container">
+      <button class="popup__button arrow-button" type="button" aria-label="close info" data-popup-close-button>
+        <span class="cross-icon"></span>
+      </button>
+      <picture class="popup__picture">
+        <img class="img-in-picture" src="../images/pets/500/pets-jennifer.jpg" alt="Golden Retriever" width="350"
+          height="350">
+      </picture>
+      <div class="popup__content">
+        <h3 class="h2 popup__name">Jennifer</h3>
+        <p class="h4 popup__race">Dog - Labrador</p>
+        <p class="popup__text h5">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find
+          a
+          new
+          forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate
+          to
+          play up a storm in the house if she has all of her favorite toys.</p>
+        <ul class="popup__feature-list">
+          <li class="popup__feature-item h5">
+            <span class="popup__feature-name">Age: </span>
+            <span class="popup__feature-value">2 months</span>
+          </li>
+          <li class="popup__feature-item h5">
+            <span class="popup__feature-name">Inoculations: </span>
+            <span class="popup__feature-value">none</span>
+          </li>
+          <li class="popup__feature-item h5">
+            <span class="popup__feature-name">Diseases: </span>
+            <span class="popup__feature-value">none</span>
+          </li>
+          <li class="popup__feature-item h5">
+            <span class="popup__feature-name">Parasites: </span>
+            <span class="popup__feature-value">none</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <script src="../js/index.js"></script>
 </body>
 

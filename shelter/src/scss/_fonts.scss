@@ -7,6 +7,14 @@
 }
 
 @font-face {
+  font-family: "Georgia";
+  font-weight: 700;
+  src: url("../../public/fonts/Georgia-Bold.woff2") format("woff2"),
+    url("../../public/fonts/Georgia-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Arial";
   font-weight: 400;
   src: url("../../public/fonts/ArialMT.woff2") format("woff2"),

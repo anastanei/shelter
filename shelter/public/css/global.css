@@ -41,6 +41,12 @@ a {
   font-display: swap;
 }
 @font-face {
+  font-family: "Georgia";
+  font-weight: 700;
+  src: url("../../public/fonts/Georgia-Bold.woff2") format("woff2"), url("../../public/fonts/Georgia-Bold.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
   font-family: "Arial";
   font-weight: 400;
   src: url("../../public/fonts/ArialMT.woff2") format("woff2"), url("../../public/fonts/ArialMT.woff") format("woff");
@@ -63,9 +69,14 @@ body {
   font-weight: 400;
   color: #545454;
   background-color: #b2b2b2;
+  overflow-y: auto;
+  -ms-overflow-style: none;
 }
 body.--scroll-locked {
   overflow: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .img-in-picture {

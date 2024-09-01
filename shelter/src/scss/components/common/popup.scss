@@ -87,6 +87,7 @@
 
   &__race {
     font-size: 20px;
+    text-transform: capitalize;
   }
 
   &__text {
@@ -118,20 +119,25 @@
   &__feature-item {
     position: relative;
     margin-bottom: 8px;
+    padding-left: 14px;
     font-size: 15px;
     line-height: 1;
 
     &::before {
-      position: relative;
+      position: absolute;
       display: inline-block;
+      top: 0.4em;
+      left: 0;
       width: 4px;
       height: 4px;
-      margin-right: 6px;
-      margin-bottom: 4px;
       border-radius: 50%;
       vertical-align: middle;
       background-color: $color-primary;
       content: "";
+    }
+
+    @media (min-width: $media-desktop) {
+      margin-bottom: 14px;
     }
   }
 

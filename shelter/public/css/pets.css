@@ -723,6 +723,7 @@ h2,
 }
 .popup__race {
   font-size: 20px;
+  text-transform: capitalize;
 }
 .popup__text {
   text-align: justify;
@@ -751,20 +752,26 @@ h2,
 .popup__feature-item {
   position: relative;
   margin-bottom: 8px;
+  padding-left: 14px;
   font-size: 15px;
   line-height: 1;
 }
 .popup__feature-item::before {
-  position: relative;
+  position: absolute;
   display: inline-block;
+  top: 0.4em;
+  left: 0;
   width: 4px;
   height: 4px;
-  margin-right: 6px;
-  margin-bottom: 4px;
   border-radius: 50%;
   vertical-align: middle;
   background-color: #f1cdb3;
   content: "";
+}
+@media (min-width: 1024px) {
+  .popup__feature-item {
+    margin-bottom: 14px;
+  }
 }
 .popup__feature-name {
   font-weight: 700;

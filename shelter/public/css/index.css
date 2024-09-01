@@ -833,12 +833,14 @@ h2,
   }
 }
 .section-hero__title {
-  margin-bottom: 42px;
+  margin: 0 auto 42px;
+  max-width: 8em;
   color: #ffffff;
 }
 @media (min-width: 768px) {
   .section-hero__title {
-    margin-bottom: 42px;
+    text-align: left;
+    margin: 0 0 42px;
   }
 }
 .section-hero__intro {

@@ -83,6 +83,10 @@
   }
 
   &__logo {
+    &.--active {
+      pointer-events: none;
+    }
+
     &-title,
     &-subtitle {
       transition: color 0.2s ease-out;

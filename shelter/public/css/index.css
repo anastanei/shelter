@@ -237,6 +237,9 @@ h2,
     padding: 30px 0 0;
   }
 }
+.header__logo.--active {
+  pointer-events: none;
+}
 .header__logo-title, .header__logo-subtitle {
   transition: color 0.2s ease-out;
 }

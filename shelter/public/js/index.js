@@ -21,12 +21,12 @@ import Modal from "./modal.js";
 new Modal('[data-menu]', '[data-menu-button]', '[data-menu-overlay]', false, '[data-menu-link]');
 new Modal('[data-popup]', '[data-popup-open-button]', '[data-popup-overlay]', '[data-popup-close-button]');
 
-function makeCard() {
-
+function makeCard(data, index) {
+  
 }
 
-function getObject() {
-  fetch("./pets.json")
+function getData() {
+  fetch(".public/js/pets.json")
     .then(response => response.json())
     .then(data => makeCard(data, 1))
     .catch(error => console.error("couldn't get an object", error));

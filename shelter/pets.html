@@ -7,21 +7,21 @@
     content="Shelter - Discover more about our loving and friendly animals looking for a new home. Join our animal shelter to find your new best friend.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shelter</title>
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/pets.css">
-  <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="./public/css/normalize.css">
+  <link rel="stylesheet" href="./public/css/pets.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="./public/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./public/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./public/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./public/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./public/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./public/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./public/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./public/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./public/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./public/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./public/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon/favicon-16x16.png">
   <link rel="manifest" href="./manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
@@ -32,20 +32,20 @@
   <header class="header header--secondary">
     <div class="container">
       <div class="header__container">
-        <a href="../../index.html" class="header__logo">
+        <a href="./index.html" class="header__logo">
           <div class="header__logo-title">Cozy House</div>
           <div class="header__logo-subtitle">Shelter for pets in Boston</div>
         </a>
         <nav class="header__nav nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="../../index.html" class="nav__link link paragraph-l">About the shelter</a>
+              <a href="./index.html" class="nav__link link paragraph-l">About the shelter</a>
             </li>
             <li class="nav__item">
-              <a href="../pages/pets.html" class="nav__link link paragraph-l link--active">Our pets</a>
+              <a href="./public/pages/pets.html" class="nav__link link paragraph-l link--active">Our pets</a>
             </li>
             <li class="nav__item">
-              <a href="../../index.html#help" class="nav__link link paragraph-l">Help the shelter</a>
+              <a href="./index.html#help" class="nav__link link paragraph-l">Help the shelter</a>
             </li>
             <li class="nav__item">
               <a href="#footer" class="nav__link link paragraph-l">Contacts</a>
@@ -61,16 +61,16 @@
           <div class="mobile-nav__overlay" data-menu-overlay></div>
           <ul class="mobile-nav__list mobile-nav__list--light">
             <li class="mobile-nav__item">
-              <a href="../../index.html" class="mobile-nav__link link link--mobile paragraph-l" data-menu-link>About the
+              <a href="./index.html" class="mobile-nav__link link link--mobile paragraph-l" data-menu-link>About the
                 shelter</a>
             </li>
             <li class="mobile-nav__item">
-              <a href="../pages/pets.html" class="mobile-nav__link link link--mobile paragraph-l link--active"
+              <a href="./public/pages/pets.html" class="mobile-nav__link link link--mobile paragraph-l link--active"
                 data-menu-link>Our
                 pets</a>
             </li>
             <li class="mobile-nav__item">
-              <a href="../../index.html#help" class="mobile-nav__link link link--mobile paragraph-l" data-menu-link>Help
+              <a href="./index.html#help" class="mobile-nav__link link link--mobile paragraph-l" data-menu-link>Help
                 the
                 shelter</a>
             </li>
@@ -91,23 +91,21 @@
         <div class="section-pets-page__list">
           <article class="section-pets-page__list-item card" aria-label="Learn more">
             <picture class="card__picture">
-              <source srcset="../images/pets/pets-katrine.avif" type="image/avif">
-              <source srcset="../images/pets/pets-katrine.webp" type="image/webp">
-              <img class="img-in-picture" src="../images/pets/pets-katrine.jpg" alt="Grey cat" width="270" height="270">
+              <source srcset="./public/images/pets/pets-katrine.avif" type="image/avif">
+              <source srcset="./public/images/pets/pets-katrine.webp" type="image/webp">
+              <img class="img-in-picture" src="./public/images/pets/pets-katrine.jpg" alt="Grey cat" width="270"
+                height="270">
             </picture>
             <span class="card__title h4">Katrine</span>
             <button class="button button--secondary card__button" type="button" data-popup-open-button>Learn
               more
             </button>
-            <!-- <button class="card__button" type="button" data-popup-open-button>
-                          <div class="button button--secondary">Learn more</div>
-                        </button> -->
           </article>
           <button class="section-pets-page__list-item card" aria-label="Learn more">
             <picture class="card__picture">
-              <source srcset="../images/pets/pets-jennifer.avif" type="image/avif">
-              <source srcset="../images/pets/pets-jennifer.webp" type="image/webp">
-              <img class="img-in-picture" src="../images/pets/pets-jennifer.jpg" alt="Labrador" width="270"
+              <source srcset="./public/images/pets/pets-jennifer.avif" type="image/avif">
+              <source srcset="./public/images/pets/pets-jennifer.webp" type="image/webp">
+              <img class="img-in-picture" src="./public/images/pets/pets-jennifer.jpg" alt="Labrador" width="270"
                 height="270">
             </picture>
             <span class="card__title h4">Jennifer</span>
@@ -115,9 +113,9 @@
           </button>
           <button class="section-pets-page__list-item card" aria-label="Learn more">
             <picture class="card__picture">
-              <source srcset="../images/pets/pets-woody.avif" type="image/avif">
-              <source srcset="../images/pets/pets-woody.webp" type="image/webp">
-              <img class="img-in-picture" src="../images/pets/pets-woody.jpg" alt="Golden Retriever" width="270"
+              <source srcset="./public/images/pets/pets-woody.avif" type="image/avif">
+              <source srcset="./public/images/pets/pets-woody.webp" type="image/webp">
+              <img class="img-in-picture" src="./public/images/pets/pets-woody.jpg" alt="Golden Retriever" width="270"
                 height="270">
             </picture>
             <span class="card__title h4">Woody</span>
@@ -125,9 +123,9 @@
           </button>
           <button class="section-pets-page__list-item card" aria-label="Learn more">
             <picture class="card__picture">
-              <source srcset="../images/pets/pets-sophia.avif" type="image/avif">
-              <source srcset="../images/pets/pets-sophia.webp" type="image/webp">
-              <img class="img-in-picture" src="../images/pets/pets-sophia.jpg" alt="Bobtail puppy" width="270"
+              <source srcset="./public/images/pets/pets-sophia.avif" type="image/avif">
+              <source srcset="./public/images/pets/pets-sophia.webp" type="image/webp">
+              <img class="img-in-picture" src="./public/images/pets/pets-sophia.jpg" alt="Bobtail puppy" width="270"
                 height="270">
             </picture>
             <span class="card__title h4">Sophia</span>
@@ -135,19 +133,19 @@
           </button>
           <button class="section-pets-page__list-item card" aria-label="Learn more">
             <picture class="card__picture">
-              <source srcset="../images/pets/pets-timmy.avif" type="image/avif">
-              <source srcset="../images/pets/pets-timmy.webp" type="image/webp">
-              <img class="img-in-picture" src="../images/pets/pets-timmy.jpg" alt="British Shorthair cat" width="270"
-                height="270">
+              <source srcset="./public/images/pets/pets-timmy.avif" type="image/avif">
+              <source srcset="./public/images/pets/pets-timmy.webp" type="image/webp">
+              <img class="img-in-picture" src="./public/images/pets/pets-timmy.jpg" alt="British Shorthair cat"
+                width="270" height="270">
             </picture>
             <span class="card__title h4">Timmy</span>
             <span class="button button--secondary card__button">Learn more</span>
           </button>
           <button class="section-pets-page__list-item card" aria-label="Learn more">
             <picture class="card__picture">
-              <source srcset="../images/pets/pets-charly.avif" type="image/avif">
-              <source srcset="../images/pets/pets-charly.webp" type="image/webp">
-              <img class="img-in-picture" src="../images/pets/pets-charly.jpg" alt="Mongrel dog" width="270"
+              <source srcset="./public/images/pets/pets-charly.avif" type="image/avif">
+              <source srcset="./public/images/pets/pets-charly.webp" type="image/webp">
+              <img class="img-in-picture" src="./public/images/pets/pets-charly.jpg" alt="Mongrel dog" width="270"
                 height="270">
             </picture>
             <span class="card__title h4">Charly</span>
@@ -155,19 +153,19 @@
           </button>
           <button class="section-pets-page__list-item card" aria-label="Learn more">
             <picture class="card__picture">
-              <source srcset="../images/pets/pets-scarlet.avif" type="image/avif">
-              <source srcset="../images/pets/pets-scarlet.webp" type="image/webp">
-              <img class="img-in-picture" src="../images/pets/pets-scarlet.jpg" alt="Jack Russell Terrier" width="270"
-                height="270">
+              <source srcset="./public/images/pets/pets-scarlet.avif" type="image/avif">
+              <source srcset="./public/images/pets/pets-scarlet.webp" type="image/webp">
+              <img class="img-in-picture" src="./public/images/pets/pets-scarlet.jpg" alt="Jack Russell Terrier"
+                width="270" height="270">
             </picture>
             <span class="card__title h4">Scarlett</span>
             <span class="button button--secondary card__button">Learn more</span>
           </button>
           <button class="section-pets-page__list-item card" aria-label="Learn more">
             <picture class="card__picture">
-              <source srcset="../images/pets/pets-freddie.avif" type="image/avif">
-              <source srcset="../images/pets/pets-freddie.webp" type="image/webp">
-              <img class="img-in-picture" src="../images/pets/pets-freddie.jpg" alt="Sepia white cat" width="270"
+              <source srcset="./public/images/pets/pets-freddie.avif" type="image/avif">
+              <source srcset="./public/images/pets/pets-freddie.webp" type="image/webp">
+              <img class="img-in-picture" src="./public/images/pets/pets-freddie.jpg" alt="Sepia white cat" width="270"
                 height="270">
             </picture>
             <span class="card__title h4">Freddie</span>
@@ -258,9 +256,9 @@
           </a>
         </div>
         <picture class="footer__picture">
-          <source srcset="../images/footer-puppy.avif" type="image/avif">
-          <source srcset="../images/footer-puppy.webp" type="image/webp">
-          <img class="img-in-picture" src="../images/footer-puppy.png" alt="" width="300" height="310">
+          <source srcset="./public/images/footer-puppy.avif" type="image/avif">
+          <source srcset="./public/images/footer-puppy.webp" type="image/webp">
+          <img class="img-in-picture" src="./public/images/footer-puppy.png" alt="" width="300" height="310">
         </picture>
       </div>
     </div>
@@ -272,7 +270,7 @@
         <span class="cross-icon"></span>
       </button>
       <picture class="popup__picture">
-        <img class="img-in-picture" src="../images/pets/500/pets-jennifer.jpg" alt="Golden Retriever" width="350"
+        <img class="img-in-picture" src="./public/images/pets/500/pets-jennifer.jpg" alt="Golden Retriever" width="350"
           height="350">
       </picture>
       <div class="popup__content">
@@ -305,7 +303,7 @@
       </div>
     </div>
   </div>
-  <script type="module" src="../js/index.js"></script>
+  <script type="module" src="./public/js/index.js"></script>
 </body>
 
 </html>

@@ -24,6 +24,10 @@ export default class Menu {
 
   toggle() {
     const isOpened = this.menu.classList.toggle('--visible');
+    const timeout = isOpened ? 0 : 300;
+    setTimeout(() => {
+      this.menu.classList.toggle('--visibility-unset', isOpened);
+    }, timeout);
     this.button.classList.toggle('--opened', isOpened);
     this.toggleScrollLock(isOpened);
   }

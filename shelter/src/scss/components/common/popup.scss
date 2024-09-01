@@ -62,7 +62,8 @@
     min-width: 55.5%;
 
     @media (min-width: $media-tablet) {
-      display: block;
+      display: flex;
+      align-items: center;
     }
 
     & .img-in-picture {
@@ -80,6 +81,7 @@
 
   &__name {
     margin-bottom: 10px;
+    text-transform: capitalize;
     font-size: 35px;
   }
 

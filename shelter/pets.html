@@ -88,90 +88,7 @@
         <h1 class="h2 section-pets-page__title">
           Our friends who<br>are looking for a house
         </h1>
-        <div class="section-pets-page__list">
-          <article class="section-pets-page__list-item card" aria-label="Learn more">
-            <picture class="card__picture">
-              <source srcset="./public/images/pets/pets-katrine.avif" type="image/avif">
-              <source srcset="./public/images/pets/pets-katrine.webp" type="image/webp">
-              <img class="img-in-picture" src="./public/images/pets/pets-katrine.jpg" alt="Grey cat" width="270"
-                height="270">
-            </picture>
-            <span class="card__title h4">Katrine</span>
-            <button class="button button--secondary card__button" type="button" data-popup-open-button>Learn
-              more
-            </button>
-          </article>
-          <button class="section-pets-page__list-item card" aria-label="Learn more">
-            <picture class="card__picture">
-              <source srcset="./public/images/pets/pets-jennifer.avif" type="image/avif">
-              <source srcset="./public/images/pets/pets-jennifer.webp" type="image/webp">
-              <img class="img-in-picture" src="./public/images/pets/pets-jennifer.jpg" alt="Labrador" width="270"
-                height="270">
-            </picture>
-            <span class="card__title h4">Jennifer</span>
-            <span class="button button--secondary card__button">Learn more</span>
-          </button>
-          <button class="section-pets-page__list-item card" aria-label="Learn more">
-            <picture class="card__picture">
-              <source srcset="./public/images/pets/pets-woody.avif" type="image/avif">
-              <source srcset="./public/images/pets/pets-woody.webp" type="image/webp">
-              <img class="img-in-picture" src="./public/images/pets/pets-woody.jpg" alt="Golden Retriever" width="270"
-                height="270">
-            </picture>
-            <span class="card__title h4">Woody</span>
-            <span class="button button--secondary card__button">Learn more</span>
-          </button>
-          <button class="section-pets-page__list-item card" aria-label="Learn more">
-            <picture class="card__picture">
-              <source srcset="./public/images/pets/pets-sophia.avif" type="image/avif">
-              <source srcset="./public/images/pets/pets-sophia.webp" type="image/webp">
-              <img class="img-in-picture" src="./public/images/pets/pets-sophia.jpg" alt="Bobtail puppy" width="270"
-                height="270">
-            </picture>
-            <span class="card__title h4">Sophia</span>
-            <span class="button button--secondary card__button">Learn more</span>
-          </button>
-          <button class="section-pets-page__list-item card" aria-label="Learn more">
-            <picture class="card__picture">
-              <source srcset="./public/images/pets/pets-timmy.avif" type="image/avif">
-              <source srcset="./public/images/pets/pets-timmy.webp" type="image/webp">
-              <img class="img-in-picture" src="./public/images/pets/pets-timmy.jpg" alt="British Shorthair cat"
-                width="270" height="270">
-            </picture>
-            <span class="card__title h4">Timmy</span>
-            <span class="button button--secondary card__button">Learn more</span>
-          </button>
-          <button class="section-pets-page__list-item card" aria-label="Learn more">
-            <picture class="card__picture">
-              <source srcset="./public/images/pets/pets-charly.avif" type="image/avif">
-              <source srcset="./public/images/pets/pets-charly.webp" type="image/webp">
-              <img class="img-in-picture" src="./public/images/pets/pets-charly.jpg" alt="Mongrel dog" width="270"
-                height="270">
-            </picture>
-            <span class="card__title h4">Charly</span>
-            <span class="button button--secondary card__button">Learn more</span>
-          </button>
-          <button class="section-pets-page__list-item card" aria-label="Learn more">
-            <picture class="card__picture">
-              <source srcset="./public/images/pets/pets-scarlet.avif" type="image/avif">
-              <source srcset="./public/images/pets/pets-scarlet.webp" type="image/webp">
-              <img class="img-in-picture" src="./public/images/pets/pets-scarlet.jpg" alt="Jack Russell Terrier"
-                width="270" height="270">
-            </picture>
-            <span class="card__title h4">Scarlett</span>
-            <span class="button button--secondary card__button">Learn more</span>
-          </button>
-          <button class="section-pets-page__list-item card" aria-label="Learn more">
-            <picture class="card__picture">
-              <source srcset="./public/images/pets/pets-freddie.avif" type="image/avif">
-              <source srcset="./public/images/pets/pets-freddie.webp" type="image/webp">
-              <img class="img-in-picture" src="./public/images/pets/pets-freddie.jpg" alt="Sepia white cat" width="270"
-                height="270">
-            </picture>
-            <span class="card__title h4">Freddie</span>
-            <span class="button button--secondary card__button">Learn more</span>
-          </button>
-        </div>
+        <div class="section-pets-page__list" data-pagination> </div>
         <div class="section-pets-page__navigation pagination__navigation">
           <button class="pagination__navigation__arrow-button arrow-button" aria-label="To the first page" disabled>
             <span class="h4">&lt;&lt;</span>
@@ -263,47 +180,82 @@
       </div>
     </div>
   </footer>
-  <div class="popup" data-popup>
+  <!-- <div class="popup" data-popup>
     <div class="popup__overlay overlay" data-popup-overlay></div>
     <div class="popup__container">
       <button class="popup__button arrow-button" type="button" aria-label="close info" data-popup-close-button>
         <span class="cross-icon"></span>
       </button>
-      <picture class="popup__picture">
-        <img class="img-in-picture" src="./public/images/pets/500/pets-jennifer.jpg" alt="Golden Retriever" width="350"
-          height="350">
+      <picture class="popup__picture" data-popup-picture>
+        <img data-popup-img class="img-in-picture" src="./public/images/pets/500/pets-jennifer.jpg"
+          alt="Golden Retriever" width="350" height="350" data-popup-img>
       </picture>
       <div class="popup__content">
-        <h3 class="h2 popup__name">Jennifer</h3>
-        <p class="h4 popup__race">Dog - Labrador</p>
-        <p class="popup__text h5">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find
-          a
-          new
-          forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate
-          to
-          play up a storm in the house if she has all of her favorite toys.</p>
+        <h3 class="h2 popup__name" data-popup-name></h3>
+        <p class="h4 popup__race"><span data-popup-type></span> - <span data-popup-breed></span></p>
+        <p class="popup__text h5" data-popup-description></p>
         <ul class="popup__feature-list">
           <li class="popup__feature-item h5">
             <span class="popup__feature-name">Age: </span>
-            <span class="popup__feature-value">2 months</span>
+            <span class="popup__feature-value" data-popup-age></span>
           </li>
           <li class="popup__feature-item h5">
             <span class="popup__feature-name">Inoculations: </span>
-            <span class="popup__feature-value">none</span>
+            <span class="popup__feature-value" data-popup-inoculations></span>
           </li>
           <li class="popup__feature-item h5">
             <span class="popup__feature-name">Diseases: </span>
-            <span class="popup__feature-value">none</span>
+            <span class="popup__feature-value" data-popup-diseases></span>
           </li>
           <li class="popup__feature-item h5">
             <span class="popup__feature-name">Parasites: </span>
-            <span class="popup__feature-value">none</span>
+            <span class="popup__feature-value" data-popup-parasites></span>
           </li>
         </ul>
       </div>
     </div>
   </div>
-  <script type="module" src="./public/js/index.js"></script>
+  <div class="popup__overlay overlay" data-popup-overlay></div>
+  <div class="popup__container">
+    <button class="popup__button arrow-button" type="button" aria-label="close info" data-popup-close-button>
+      <span class="cross-icon"></span>
+    </button>
+    <picture class="popup__picture">
+      <img class="img-in-picture" src="./public/images/pets/500/pets-jennifer.jpg" alt="Golden Retriever" width="350"
+        height="350">
+    </picture>
+    <div class="popup__content">
+      <h3 class="h2 popup__name">Jennifer</h3>
+      <p class="h4 popup__race">Dog - Labrador</p>
+      <p class="popup__text h5">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find
+        a
+        new
+        forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate
+        to
+        play up a storm in the house if she has all of her favorite toys.</p>
+      <ul class="popup__feature-list">
+        <li class="popup__feature-item h5">
+          <span class="popup__feature-name">Age: </span>
+          <span class="popup__feature-value">2 months</span>
+        </li>
+        <li class="popup__feature-item h5">
+          <span class="popup__feature-name">Inoculations: </span>
+          <span class="popup__feature-value">none</span>
+        </li>
+        <li class="popup__feature-item h5">
+          <span class="popup__feature-name">Diseases: </span>
+          <span class="popup__feature-value">none</span>
+        </li>
+        <li class="popup__feature-item h5">
+          <span class="popup__feature-name">Parasites: </span>
+          <span class="popup__feature-value">none</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div> -->
+  <script type="module" src="./public/js/scripts.js"></script>
+  <script type="module" src="./public/js/pets-page.js"></script>
 </body>
 
 </html>

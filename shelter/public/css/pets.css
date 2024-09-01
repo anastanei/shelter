@@ -173,7 +173,7 @@ h2,
   position: relative;
   display: block;
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color 0.3s ease-out;
 }
 .link::before {
   position: absolute;
@@ -241,7 +241,7 @@ h2,
   pointer-events: none;
 }
 .header__logo-title, .header__logo-subtitle {
-  transition: color 0.2s ease-out;
+  transition: color 0.3s ease-out;
 }
 .header__logo-title {
   margin-bottom: 10px;
@@ -297,13 +297,13 @@ h2,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.2s ease-out;
+  transition: transform 0.3s ease-out;
 }
 .header__mobile-button-line {
   width: 30px;
   height: 2px;
   background-color: #f1cdb3;
-  transition: background-color 0.2s ease-out;
+  transition: background-color 0.3s ease-out;
 }
 .header__mobile-button-line--dark {
   background-color: #000;
@@ -388,7 +388,7 @@ h2,
   justify-content: center;
   gap: 40px;
   background-color: #292929;
-  transition: transform 0.2s ease-out;
+  transition: transform 0.3s ease-out;
 }
 .mobile-nav__list--light {
   background-color: #ffffff;
@@ -492,7 +492,7 @@ h2,
   align-items: center;
   gap: 20px;
   color: #f1cdb3;
-  transition: all 0.2s ease-out;
+  transition: all 0.3s ease-out;
 }
 .footer__link-text {
   position: relative;
@@ -544,7 +544,7 @@ h2,
   background-color: #f1cdb3;
   border-radius: 100px;
   user-select: none;
-  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+  transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
 }
 .button--secondary {
   padding: 13px 43px;
@@ -568,7 +568,7 @@ h2,
   border: 2px solid #f1cdb3;
   border-radius: 100px;
   transition-property: background-color, border-color, color;
-  transition-duration: 0.2s;
+  transition-duration: 0.3s;
   transition-timing-function: ease-out;
 }
 .arrow-button:hover {
@@ -594,7 +594,7 @@ h2,
   padding-bottom: 30px;
   background-color: #fafafa;
   border-radius: 9px;
-  transition: background-color 0.15s ease-out;
+  transition: background-color 0.3s ease-out;
 }
 .card__picture {
   display: block;

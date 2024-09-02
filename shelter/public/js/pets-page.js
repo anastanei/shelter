@@ -20,14 +20,11 @@ function fullArray(array) {
   const indexes = getIndexes(6, 4);
   indexes.forEach(index => res.push(array[index]));
 
-  const chunk1 = [];
-  indexes.sort((a, b) => b - a).forEach(index => chunk1.push(array.splice(index, 1)[0]));
+  const chunk = indexes.sort((a, b) => b - a).map(index => array.splice(index, 1)[0]);
 
   shuffleAndPush(array);
-  shuffleAndPush(chunk1);
+  shuffleAndPush(chunk);
   shuffleAndPush(array);
-
-  console.log(array, res, indexes, chunk1);
   return [...res, ...res];
 }
 

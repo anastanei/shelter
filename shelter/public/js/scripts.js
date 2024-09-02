@@ -23,5 +23,6 @@ function shuffle(array) {
   }
   return array;
 };
+
 export { shuffle };
 

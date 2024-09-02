@@ -576,9 +576,15 @@ h2,
   background-color: #fddcc4;
   border-color: #fddcc4;
 }
-.arrow-button:active, .arrow-button--active {
+.arrow-button:active, .arrow-button.--active, .arrow-button.--active:hover {
   background-color: #f1cdb3;
   border-color: #f1cdb3;
+}
+.arrow-button.--active {
+  cursor: default;
+}
+.arrow-button.--check {
+  outline: 2px solid lavender;
 }
 .arrow-button:disabled {
   background-color: unset;

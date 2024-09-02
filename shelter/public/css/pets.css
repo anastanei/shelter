@@ -855,22 +855,6 @@ h2,
     margin-bottom: 60px;
   }
 }
-.section-pets-page__list-item {
-  max-width: 270px;
-}
-.section-pets-page__list-item:nth-child(n+4) {
-  display: none;
-}
-@media (min-width: 640px) {
-  .section-pets-page__list-item:nth-child(n+4):nth-child(-n+6) {
-    display: block;
-  }
-}
-@media (min-width: 1024px) {
-  .section-pets-page__list-item:nth-child(n+7) {
-    display: block;
-  }
-}
 .section-pets-page__navigation {
   display: flex;
   justify-content: center;

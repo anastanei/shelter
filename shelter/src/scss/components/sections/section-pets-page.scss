@@ -47,26 +47,6 @@
     }
   }
 
-  &__list-item {
-    max-width: 270px;
-
-    &:nth-child(n + 4) {
-      display: none;
-    }
-
-    @media (min-width: $media-mobile-l) {
-      &:nth-child(n + 4):nth-child(-n + 6) {
-        display: block;
-      }
-    }
-
-    @media (min-width: $media-desktop) {
-      &:nth-child(n + 7) {
-        display: block;
-      }
-    }
-  }
-
   &__navigation {
     display: flex;
     justify-content: center;

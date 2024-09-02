@@ -87,37 +87,39 @@ export default function card(containerSelector, index) {
   const item = data[index];
   const src = "./public/images/pets";
 
-  const card = document.createElement("article");
-  const cardSelector = "data-card";
-  card.className = "section-pets-page__list-item card";
-  card.setAttribute("aria-label", "Learn more");
-  card.setAttribute(cardSelector, "");
+  const card = document.createElement("li");
+  card.setAttribute("data-card", "");
+  card.className = "card-item";
 
-  card.innerHTML = `
+  const article = document.createElement("article");
+  article.className = "card";
+
+  article.innerHTML = `
     <picture class="card__picture">
       <source srcset="${src}/pets-${item.name}.avif" type="image/avif">
       <source srcset="${src}/pets-${item.name}.webp" type="image/webp">
       <img class="img-in-picture" width="270" height="270" src="${src}/500/pets-${item.name}.jpg" alt="${item.type}, ${item.breed}">
     </picture>
-    <span class="card__title h4">${item.name}</span>
+    <h3 class="card__title h4">${item.name}</h3>
   `;
 
   const button = document.createElement("button");
   button.className = "button button--secondary card__button";
   button.type = "button";
   button.setAttribute("data-popup-open-button", "");
+  button.setAttribute("aria-label", "Learn more");
   button.textContent = "Learn more";
 
-  card.appendChild(button);
-
-  generatePopup(card, item);
+  article.appendChild(button);
+  card.appendChild(article);
+  generatePopup(article, item);
   container.appendChild(card);
   new Popup(card);
 }
 
 
 export function generatePopup(container, item) {
-  const popup = document.createElement('div');
+  const popup = document.createElement('section');
   popup.className = 'popup';
   popup.setAttribute('data-popup', '');
 
@@ -165,7 +167,7 @@ export function generatePopup(container, item) {
     </div>
   `;
 
-  containerDiv.insertBefore(closeButton, containerDiv.firstChild);
+  containerDiv.appendChild(closeButton);
   popup.appendChild(overlay);
   popup.appendChild(containerDiv);
 

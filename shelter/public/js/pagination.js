@@ -93,7 +93,7 @@ class Pagination {
     this.pagesAmount = this.getPagesAmount();
     this.startIndex = (page - 1) * this.count;
     this.chunk = this.array.slice(this.startIndex, this.startIndex + this.count);
-    this.chunk.map(index => card(this.paginationSelector, index));
+    this.chunk.forEach(index => card(this.paginationSelector, index));
     this.refreshNav(page);
   }
 

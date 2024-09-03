@@ -32,6 +32,7 @@ class Pagination {
     this.init();
   }
 
+
   init () {
     if (this.mediaMobile.matches) {
       this.count = this.countMobile;
@@ -51,6 +52,12 @@ class Pagination {
     this.buttonPrev.addEventListener('click', () => this.showPage(this.currentPage -= 1));
     this.buttonNext.addEventListener('click', () => this.showPage(this.currentPage += 1));
     this.buttonLast.addEventListener('click', () => this.showPage(this.currentPage = this.pagesAmount));
+  }
+
+  // controlMaxPage
+
+  getPagesAmount () {
+    return this.length / this.count;
   }
   
   getArray () {
@@ -78,14 +85,14 @@ class Pagination {
   getLayout(event, n) {
     if (event.matches) {
       this.count = n;
-      this.showPage(this.currentPage);
-      this.pagesAmount = this.length/this.count;
+      this.pagesAmount = this.getPagesAmount();
+      this.showPage(this.currentPage <= this.pagesAmount ? this.currentPage : this.pagesAmount);
     }
   }
 
   showPage(page) {
     this.list.innerHTML = '';
-    this.pagesAmount = this.length / this.count;
+    this.pagesAmount = this.getPagesAmount();
     this.startIndex = (page - 1) * this.count;
     this.chunk = this.array.slice(this.startIndex, this.startIndex + this.count);
     this.chunk.map(index => card(this.paginationSelector, index));

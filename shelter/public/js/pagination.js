@@ -1,90 +1,102 @@
 import card from "./card.js";
 import { shuffle } from "./scripts.js";
+class Pagination {
+  constructor(card, shuffle) {
+    this.shuffle = shuffle;
+    this.card = card;
 
-function fullArray() {
-  const array = [...Array(8).keys()];;
-  const res = [];
+    this.array = this.getArray();
+    this.length = this.array.length;
+    this.count;
+    this.countMobile = 3;
+    this.countTablet = 6;
+    this.countDesktop = 8;
+    this.pagesAmount;
+    this.startPage = 1;
+    this.currentPage = this.startPage;
 
-  const getIndexes = (srcLength, resLength) => shuffle([...Array(srcLength).keys()]).slice(0, resLength);
-  const shuffleAndPush = (arr) => res.push(...shuffle(arr));
+    this.mediaMobile = window.matchMedia('(max-width: 639px)');
+    this.mediaTablet = window.matchMedia('(min-width: 640px) and (max-width: 1023px)');
+    this.mediaDesktop = window.matchMedia('(min-width: 1024px)');
 
-  shuffleAndPush(array);
+    this.paginationSelector = '[data-pagination]';
 
-  const indexes = getIndexes(6, 4);
-  indexes.forEach(index => res.push(array[index]));
+    this.list = document.querySelector(this.paginationSelector);
+    this.nav = document.querySelector('[data-pagination-nav]');
+    this.buttonFirst = this.nav.querySelector('[data-pagination-first]');
+    this.buttonPrev = this.nav.querySelector('[data-pagination-prev]');
+    this.showCurrent = this.nav.querySelector('[data-pagination-current]');
+    this.buttonNext = this.nav.querySelector('[data-pagination-next]');
+    this.buttonLast = this.nav.querySelector('[data-pagination-last]');
 
-  const chunk = indexes.sort((a, b) => b - a)
-                       .map(index => array
-                       .splice(index, 1)[0]);
+    this.init();
+  }
 
-  shuffleAndPush(array);
-  shuffleAndPush(chunk);
-  shuffleAndPush(array);
-  return [...res, ...res];
+  init () {
+    if (this.mediaMobile.matches) {
+      this.count = this.countMobile;
+    } else if (this.mediaTablet.matches) {
+      this.count = this.countTablet;
+    } else if (this.mediaDesktop.matches) {
+      this.count = this.countDesktop;
+    }
+
+    this.showPage(this.currentPage);
+
+    this.mediaMobile.addEventListener('change', (event) => this.getLayout(event, this.countMobile));
+    this.mediaTablet.addEventListener('change', (event) => this.getLayout(event, this.countTablet));
+    this.mediaDesktop.addEventListener('change', (event) => this.getLayout(event, this.countDesktop));
+
+    this.buttonFirst.addEventListener('click', () => this.showPage(this.startPage));
+    this.buttonPrev.addEventListener('click', () => this.showPage(this.currentPage -= 1));
+    this.buttonNext.addEventListener('click', () => this.showPage(this.currentPage += 1));
+    this.buttonLast.addEventListener('click', () => this.showPage(this.currentPage = this.pagesAmount));
+  }
+  
+  getArray () {
+    const array = [...Array(8).keys()];;
+    const res = [];
+
+    const getIndexes = (srcLength, resLength) => shuffle([...Array(srcLength).keys()]).slice(0, resLength);
+    const shuffleAndPush = (arr) => res.push(...shuffle(arr));
+
+    shuffleAndPush(array);
+
+    const indexes = getIndexes(6, 4);
+    indexes.forEach(index => res.push(array[index]));
+
+    const chunk = indexes.sort((a, b) => b - a)
+                        .map(index => array
+                        .splice(index, 1)[0]);
+
+    shuffleAndPush(array);
+    shuffleAndPush(chunk);
+    shuffleAndPush(array);
+    return [...res, ...res];
+  }
+
+  getLayout(event, n) {
+    if (event.matches) {
+      this.count = n;
+      this.showPage(this.currentPage);
+      this.pagesAmount = this.length/this.count;
+    }
+  }
+
+  showPage(page) {
+    this.list.innerHTML = '';
+    this.pagesAmount = this.length / this.count;
+    this.startIndex = (page - 1) * this.count;
+    this.chunk = this.array.slice(this.startIndex, this.startIndex + this.count);
+    this.chunk.map(index => card(this.paginationSelector, index));
+    this.refreshNav(page);
+  }
+
+  refreshNav(page) {
+    this.showCurrent.innerHTML = page;
+    this.buttonFirst.disabled = this.buttonPrev.disabled = (page == this.startPage);
+    this.buttonLast.disabled = this.buttonNext.disabled = (page == this.pagesAmount);
+  }
 }
 
-function pagination() {
-  const array = fullArray();
-  const length = array.length;
-  let count;
-  let pagesAmount;
-  const mediaMobile = window.matchMedia('(max-width: 639px)');
-  const mediaTablet = window.matchMedia('(min-width: 640px) and (max-width: 1023px)');
-  const mediaDesktop = window.matchMedia('(min-width: 1024px)');
-  const startPage = 1;
-  let currentPage = startPage;
-
-  const paginationSelector = '[data-pagination]';
-  const list = document.querySelector(paginationSelector);
-  const nav = document.querySelector('[data-pagination-nav]');
-  const buttonFirst = nav.querySelector('[data-pagination-first]');
-  const buttonPrev = nav.querySelector('[data-pagination-prev]');
-  const showCurrent = nav.querySelector('[data-pagination-current]');
-  const buttonNext = nav.querySelector('[data-pagination-next]');
-  const buttonLast = nav.querySelector('[data-pagination-last]');
-
-  if (mediaMobile.matches) {
-    count = 3;
-    showPage(currentPage);
-  }
-
-  if (mediaTablet.matches) {
-    count = 6;
-    showPage(currentPage);
-  }
-
-  if (mediaDesktop.matches) {
-    count = 8;
-    showPage(currentPage);
-  }
-
-  function showPage(page) {
-  list.innerHTML = '';
-  showCurrent.innerHTML = page;
-  pagesAmount = length/count;
-  const startIndex = (page - 1) * count;
-  const chunk = array.slice(startIndex, startIndex + count);
-  chunk.map(index => card(paginationSelector, index));
-  buttonFirst.disabled = buttonPrev.disabled = (page == startPage);
-  buttonLast.disabled = buttonNext.disabled = (page == pagesAmount);
-  }
-
-  buttonFirst.addEventListener('click', () => showPage(startPage));
-  buttonPrev.addEventListener('click', () => showPage(currentPage -= 1));
-  buttonNext.addEventListener('click', () => showPage(currentPage += 1));
-  buttonLast.addEventListener('click', () => showPage(currentPage = pagesAmount));
-
-  function getLayout(event, n) {
-    if (event.matches) {
-      count = n;
-      showPage(currentPage);
-      pagesAmount = length/count;
-    }
-  };
-
-  mediaMobile.addEventListener('change', (event) => getLayout(event, 3));
-  mediaTablet.addEventListener('change', (event) => getLayout(event, 6));
-  mediaDesktop.addEventListener('change', (event) => getLayout(event, 8));
-};
-
-pagination();
+new Pagination(card, shuffle);

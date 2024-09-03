@@ -53,9 +53,7 @@ class Pagination {
     this.buttonNext.addEventListener('click', () => this.showPage(this.currentPage += 1));
     this.buttonLast.addEventListener('click', () => this.showPage(this.currentPage = this.pagesAmount));
   }
-
-  // controlMaxPage
-
+  
   getPagesAmount () {
     return this.length / this.count;
   }

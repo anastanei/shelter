@@ -976,37 +976,37 @@ h2,
   }
 }
 
-.section-pets {
+.pets {
   position: relative;
   background-color: #f6f6f6;
 }
-.section-pets__container {
+.pets__container {
   position: relative;
   padding: 42px 0;
 }
 @media (min-width: 640px) {
-  .section-pets__container {
+  .pets__container {
     padding: 80px 0 100px;
   }
 }
-.section-pets__title {
+.pets__title {
   margin-bottom: 42px;
   text-align: center;
 }
 @media (min-width: 640px) {
-  .section-pets__title {
+  .pets__title {
     margin-bottom: 60px;
   }
 }
-.section-pets__slider {
+.pets__slider {
   margin-bottom: 42px;
 }
 @media (min-width: 640px) {
-  .section-pets__slider {
+  .pets__slider {
     margin-bottom: 60px;
   }
 }
-.section-pets__button {
+.pets__button {
   margin: 0 auto;
 }
 

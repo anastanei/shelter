@@ -4,6 +4,7 @@
   right: 0;
   top: 0;
   min-height: 100vh;
+  min-height: 100dvh;
   height: 100%;
   box-sizing: border-box;
   opacity: 0;
@@ -23,6 +24,7 @@
       display: block;
       min-width: 100vw;
       min-height: 100vh;
+      min-height: 100dvh;
       background-color: rgba($color-dark-3xl, 0.6);
     }
   }

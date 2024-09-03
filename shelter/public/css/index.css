@@ -347,6 +347,7 @@ h2,
   right: 0;
   top: 0;
   min-height: 100vh;
+  min-height: 100dvh;
   height: 100%;
   box-sizing: border-box;
   opacity: 0;
@@ -365,6 +366,7 @@ h2,
   display: block;
   min-width: 100vw;
   min-height: 100vh;
+  min-height: 100dvh;
   background-color: rgba(41, 41, 41, 0.6);
 }
 .mobile-nav.--visibility-unset {
@@ -662,6 +664,7 @@ h2,
   left: 0;
   min-width: 100vw;
   min-height: 100vh;
+  min-height: 100dvh;
   background-color: rgba(41, 41, 41, 0.7);
   content: "";
   visibility: hidden;

@@ -48,7 +48,7 @@ class Pagination {
     this.mediaTablet.addEventListener('change', (event) => this.getLayout(event, this.countTablet));
     this.mediaDesktop.addEventListener('change', (event) => this.getLayout(event, this.countDesktop));
 
-    this.buttonFirst.addEventListener('click', () => this.showPage(this.startPage));
+    this.buttonFirst.addEventListener('click', () => this.showPage(this.currentPage = this.startPage));
     this.buttonPrev.addEventListener('click', () => this.showPage(this.currentPage -= 1));
     this.buttonNext.addEventListener('click', () => this.showPage(this.currentPage += 1));
     this.buttonLast.addEventListener('click', () => this.showPage(this.currentPage = this.pagesAmount));
@@ -62,15 +62,15 @@ class Pagination {
     const array = [...Array(8).keys()];;
     const res = [];
 
-    const getIndexes = (srcLength, resLength) => shuffle([...Array(srcLength).keys()]).slice(0, resLength);
+    const getIndices = (srcLength, resLength) => shuffle([...Array(srcLength).keys()]).slice(0, resLength);
     const shuffleAndPush = (arr) => res.push(...shuffle(arr));
 
     shuffleAndPush(array);
 
-    const indexes = getIndexes(6, 4);
-    indexes.forEach(index => res.push(array[index]));
+    const indices = getIndices(6, 4);
+    indices.forEach(index => res.push(array[index]));
 
-    const chunk = indexes.sort((a, b) => b - a)
+    const chunk = indices.sort((a, b) => b - a)
                         .map(index => array
                         .splice(index, 1)[0]);
 

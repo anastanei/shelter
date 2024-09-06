@@ -47,6 +47,7 @@ class Slider {
       ? this.rightIndices || getNewIndices()
       : this.leftIndices || getNewIndices();
 
+    this.animateSlide(isForward);
     this.disableButtons(true);
     this.toogleSlideClasses(isForward, 'on');
     this.removePopups();
@@ -57,17 +58,23 @@ class Slider {
       this.unshift([...nextIndices]);
     }
 
+    return [currentIndices, nextIndices];
+  }
+
+  animateSlide(isForward) {
     this.slide.addEventListener('animationend', () => {
+
       const slides = [...Array(this.count).keys()];
+
       slides.forEach(() => {
         const index = isForward ? 0 : this.slide.children.length - 1;
         this.slide.removeChild(this.slide.children[index]);
       });
+
       this.toogleSlideClasses(isForward);
       this.disableButtons(false);
-    }, { once: true });
     
-    return [currentIndices, nextIndices];
+    }, { once: true });
   }
 
   removePopups() {

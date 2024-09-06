@@ -55,6 +55,20 @@ class Slider {
     this.addCards([...this.currentIndices], true);
   }
 
+
+  addCards(array, isForward) {
+    const currentArray = array;
+    if (isForward) {
+      console.log(`выводим массив ${array}`);
+      currentArray.forEach((index) => new this.Card('[data-slider-list]', index));
+    } else {
+      console.log(`выводим массив ${array}`);
+      for (let i = array.length - 1; i >= 0; i -=1 ) {
+        new this.Card('[data-slider-list]', array[i], 'start');
+      }
+    }
+  }
+
   handleMediaQueries() {
     this.mediaMobile.addEventListener('change', (event) => this.updateAmount(event, this.mobileCount));
     this.mediaTablet.addEventListener('change', (event) => this.updateAmount(event, this.tabletCount));
@@ -85,9 +99,9 @@ class Slider {
     this.disableButtons(true);
     this.toogleSlideClasses(isForward, 'on');
     this.removePopups();
-
+    console.log('nextIndices перед добавлением карт:', nextIndices);
     this.addCards(nextIndices, isForward);
-
+    console.log('nextIndices после добавления карт:', nextIndices);
     return [currentIndices, nextIndices];
   }
 
@@ -124,16 +138,6 @@ class Slider {
     } else {
       this.slide.classList.remove('--move-right', '--move-left')
     };
-  }
-
-  addCards(array, isForward) {
-    if (isForward) {
-      console.log(`выводим массив ${array}`);
-      array.forEach((index) => new this.Card('[data-slider-list]', index));
-    } else {
-      console.log(`выводим массив ${array}`);
-      array.forEach((index) => new this.Card('[data-slider-list]', index, 'start'));
-    }
   }
 }
 

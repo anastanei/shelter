@@ -17,7 +17,7 @@ class Slider {
 
 
     this.mediaMobile = window.matchMedia('(max-width: 639px)');
-    this.mediaTablet = window.matchMedia('(min-width: 640px) and (max-width: 1140px)');
+    this.mediaTablet = window.matchMedia('(min-width: 640px) and (max-width: 1139px)');
     this.mediaDesktop = window.matchMedia('(min-width: 1140px)');
 
     this.count = this.getCount();

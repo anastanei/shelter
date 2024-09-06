@@ -11,9 +11,11 @@
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
 
-  &:hover {
-    background-color: $color-primary-light;
-    border-color: $color-primary-light;
+  @include hover-media-query {
+    &:hover {
+      background-color: $color-primary-light;
+      border-color: $color-primary-light;
+    }
   }
 
   &:active,

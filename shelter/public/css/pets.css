@@ -574,9 +574,11 @@ h2,
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
 }
-.arrow-button:hover {
-  background-color: #fddcc4;
-  border-color: #fddcc4;
+@media (hover: hover) {
+  .arrow-button:hover {
+    background-color: #fddcc4;
+    border-color: #fddcc4;
+  }
 }
 .arrow-button:active, .arrow-button.--active, .arrow-button.--active:hover {
   background-color: #f1cdb3;
@@ -605,6 +607,7 @@ h2,
   border-radius: 9px;
   transition: background-color 0.3s ease-out;
   transition: box-shadow 0.3s ease-out;
+  flex-shrink: 0;
 }
 .card__picture {
   display: block;
@@ -636,17 +639,15 @@ h2,
   height: 431px;
   content: "";
 }
-.card:hover {
-  background-color: #ffffff;
-  box-shadow: 0 4px 10px 0 rgba(41, 41, 41, 0.1), 0 4px 3px 0 rgba(41, 41, 41, 0.1);
-}
-.card:hover .button {
-  background-color: #fddcc4;
-  border-color: #fddcc4;
-}
-.card:active .button {
-  background-color: #f6f6f6;
-  border-color: #f6f6f6;
+@media (hover: hover) {
+  .card:hover {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px 0 rgba(41, 41, 41, 0.1), 0 4px 3px 0 rgba(41, 41, 41, 0.1);
+  }
+  .card:hover .button {
+    background-color: #fddcc4;
+    border-color: #fddcc4;
+  }
 }
 
 .popup {

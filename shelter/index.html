@@ -137,15 +137,17 @@
         <h2 class="pets__title">
           Our friends who<br>are looking for a house
         </h2>
-        <div class="pets__slider slider">
-          <button class="slider__arrow-button arrow-button" aria-label="Previous">
+        <div class="pets__slider slider" data-slider>
+          <button class="slider__arrow-button arrow-button" aria-label="Previous" data-slider-previous>
             <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929" />
             </svg>
           </button>
-          <ul class="slider__list" data-slider-list>
-          </ul>
-          <button class="slider__arrow-button slider__arrow-button--forward arrow-button" aria-label="Next">
+          <div class="slider__wrapper">
+            <ul class="slider__list" data-slider-list>
+            </ul>
+          </div>
+          <button class="slider__arrow-button --forward arrow-button" aria-label="Next" data-slider-next>
             <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929" />
             </svg>

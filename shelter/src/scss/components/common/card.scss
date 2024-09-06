@@ -6,17 +6,7 @@
   border-radius: 9px;
   transition: background-color 0.3s ease-out;
   transition: box-shadow 0.3s ease-out;
-
-  // &::after {
-  //   position: absolute;
-  //   z-index: 0;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   cursor: pointer;
-  //   content: "";
-  // }
+  flex-shrink: 0;
 
   &__picture {
     display: block;
@@ -53,20 +43,22 @@
     }
   }
 
-  &:hover {
-    background-color: $color-light-xl;
-    box-shadow: 0 4px 10px 0 rgba($color-dark-3xl, 0.1),
-      0 4px 3px 0 rgba($color-dark-3xl, 0.1);
-    & .button {
-      background-color: $color-primary-light;
-      border-color: $color-primary-light;
+  @include hover-media-query {
+    &:hover {
+      background-color: $color-light-xl;
+      box-shadow: 0 4px 10px 0 rgba($color-dark-3xl, 0.1),
+        0 4px 3px 0 rgba($color-dark-3xl, 0.1);
+      & .button {
+        background-color: $color-primary-light;
+        border-color: $color-primary-light;
+      }
     }
   }
 
-  &:active {
-    & .button {
-      background-color: $color-light-l;
-      border-color: $color-light-l;
-    }
-  }
+  // &:active {
+  //   & .button {
+  //     background-color: $color-light-l;
+  //     border-color: $color-light-l;
+  //   }
+  // }
 }

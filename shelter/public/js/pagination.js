@@ -1,9 +1,10 @@
-import card from "./card.js";
+import Card from "./card.js";
 import { shuffle } from "./scripts.js";
+
 class Pagination {
-  constructor(card, shuffle) {
+  constructor(Card, shuffle) {
     this.shuffle = shuffle;
-    this.card = card;
+    this.Card = Card;
 
     this.array = this.getArray();
     this.length = this.array.length;
@@ -32,8 +33,7 @@ class Pagination {
     this.init();
   }
 
-
-  init () {
+  init() {
     if (this.mediaMobile.matches) {
       this.count = this.countMobile;
     } else if (this.mediaTablet.matches) {
@@ -53,17 +53,17 @@ class Pagination {
     this.buttonNext.addEventListener('click', () => this.showPage(this.currentPage += 1));
     this.buttonLast.addEventListener('click', () => this.showPage(this.currentPage = this.pagesAmount));
   }
-  
-  getPagesAmount () {
+
+  getPagesAmount() {
     return this.length / this.count;
   }
-  
-  getArray () {
-    const array = [...Array(8).keys()];;
+
+  getArray() {
+    const array = [...Array(8).keys()];
     const res = [];
 
-    const getIndices = (srcLength, resLength) => shuffle([...Array(srcLength).keys()]).slice(0, resLength);
-    const shuffleAndPush = (arr) => res.push(...shuffle(arr));
+    const getIndices = (srcLength, resLength) => this.shuffle([...Array(srcLength).keys()]).slice(0, resLength);
+    const shuffleAndPush = (arr) => res.push(...this.shuffle(arr));
 
     shuffleAndPush(array);
 
@@ -93,7 +93,9 @@ class Pagination {
     this.pagesAmount = this.getPagesAmount();
     this.startIndex = (page - 1) * this.count;
     this.chunk = this.array.slice(this.startIndex, this.startIndex + this.count);
-    this.chunk.forEach(index => card(this.paginationSelector, index));
+
+    this.chunk.forEach(index => new this.Card(this.paginationSelector, index));
+    
     this.refreshNav(page);
   }
 
@@ -104,4 +106,4 @@ class Pagination {
   }
 }
 
-new Pagination(card, shuffle);
+new Pagination(Card, shuffle);

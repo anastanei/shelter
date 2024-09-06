@@ -7,6 +7,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@mixin hover-media-query {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
 // * {
 //   scrollbar-width: thin;
 //   scrollbar-color: $color-dark-3xl $color-dark-l;

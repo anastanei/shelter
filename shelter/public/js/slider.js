@@ -80,7 +80,7 @@ class Slider {
     const nextIndices = (isForward)
       ? this.rightIndices || getNewIndices()
       : this.leftIndices || getNewIndices();
-
+    this.rightIndices = this.leftIndices = undefined;
     this.animateSlide(isForward);
     this.disableButtons(true);
     this.toogleSlideClasses(isForward, 'on');

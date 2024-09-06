@@ -118,7 +118,9 @@ export default class Card {
         <source srcset="${this.src}/pets-${this.data.name}.webp" type="image/webp">
         <img class="img-in-picture" width="270" height="270" src="${this.src}/500/pets-${this.data.name}.jpg" alt="${this.data.type}, ${this.data.breed}">
       </picture>
+      <span class="card__title h4">${this.index}</span>
       <span class="card__title h4">${this.data.name}</span>
+
     `;
 
     const button = document.createElement("button");

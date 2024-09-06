@@ -59,10 +59,10 @@ class Slider {
   addCards(array, isForward) {
     const currentArray = array;
     if (isForward) {
-      console.log(`выводим массив ${array}`);
+      console.log(`Идём вправо, выводим массив ${array}`);
       currentArray.forEach((index) => new this.Card('[data-slider-list]', index));
     } else {
-      console.log(`выводим массив ${array}`);
+      console.log(`Идём влево, выводим массив ${array}`);
       for (let i = array.length - 1; i >= 0; i -=1 ) {
         new this.Card('[data-slider-list]', array[i], 'start');
       }
@@ -99,9 +99,7 @@ class Slider {
     this.disableButtons(true);
     this.toogleSlideClasses(isForward, 'on');
     this.removePopups();
-    console.log('nextIndices перед добавлением карт:', nextIndices);
     this.addCards(nextIndices, isForward);
-    console.log('nextIndices после добавления карт:', nextIndices);
     return [currentIndices, nextIndices];
   }
 

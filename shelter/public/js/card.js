@@ -112,7 +112,6 @@ export default class Card {
     card.className = "card";
     card.setAttribute("aria-label", "Learn more");
 
-    // <span class="card__title h4">${this.index}</span>
     card.innerHTML = `
       <picture class="card__picture">
         <source srcset="${this.src}/pets-${this.data.name}.avif" type="image/avif">

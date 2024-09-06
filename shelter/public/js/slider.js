@@ -17,36 +17,76 @@ class Slider {
   init() {
     this.count = 3;
     const indices = this.indices;
-    const currentIndices = shuffle(indices).slice(0, this.count);
-    const nextIndices = indices.slice(this.count, 2 * this.count);
-    this.push([...currentIndices]);
+    this.currentIndices = shuffle(indices).slice(0, this.count);
+    this.rightIndices = undefined;
+    this.leftIndices = undefined;
+    this.push([...this.currentIndices]);
 
-    this.buttonNext.addEventListener('click', () => this.getNewSlides(currentIndices, nextIndices));
-    this.buttonPrev.addEventListener('click', () => this.getNewSlides(currentIndices,nextIndices));
+    this.buttonNext.addEventListener('click', () => {
+      const [newLeftIndices, newCurrentIndices] = this.moveSlides(this.currentIndices, true);
+      this.currentIndices = newCurrentIndices;
+      this.leftIndices = newLeftIndices;
+    });
+
+    this.buttonPrev.addEventListener('click', () => {
+      const [newRightIndices, newCurrentIndices] = this.moveSlides(this.currentIndices, false);
+      this.currentIndices = newCurrentIndices;
+      this.rightIndices = newRightIndices;
+    });
   }
 
-  getNewSlides(currentIndices, nextIndices) {
-      
-    // console.log(`выводим массив currentArray: ${currentArray}, nextIndices: ${nextIndices}`);
-    this.buttonPrev.disabled = this.buttonNext.disabled = true;
-    this.slide.classList.add('--move-right');
+  moveSlides(currentIndices, isForward) {
+
+    const getNewIndices = () => {
+      const availableIndices = this.indices.filter(item => !currentIndices.includes(item));
+      const shuffledIndices = shuffle(availableIndices);
+      return shuffledIndices.slice(0, this.count);
+    };
+
+    const nextIndices = (isForward)
+      ? this.rightIndices || getNewIndices()
+      : this.leftIndices || getNewIndices();
+
+    this.disableButtons(true);
+    this.toogleSlideClasses(isForward, 'on');
+    this.removePopups();
+
+    if (isForward) {
+      this.push([...nextIndices]);
+    } else {
+      this.unshift([...nextIndices]);
+    }
+
+    this.slide.addEventListener('animationend', () => {
+      const slides = [...Array(this.count).keys()];
+      slides.forEach(() => {
+        const index = isForward ? 0 : this.slide.children.length - 1;
+        this.slide.removeChild(this.slide.children[index]);
+      });
+      this.toogleSlideClasses(isForward);
+      this.disableButtons(false);
+    }, { once: true });
+    
+    return [currentIndices, nextIndices];
+  }
+
+  removePopups() {
+    this.popups = document.querySelectorAll('[data-popup]');
     this.popups.forEach(popup => {
       popup.remove();
     });
-    this.push([...nextIndices]);
-    // const currentArray = this.indices.filter(item => !nextIndices.includes(item));
-    
-    this.slide.addEventListener('animationend', () => {
-      const slides = [...Array(this.count).keys()];
-      
-      slides.forEach(() => this.slide.removeChild(this.slide.children[0]));
-      this.popups = document.querySelectorAll('[data-popup]');
+  }
 
-      // this.push(shuffle(currentArray).slice(0, this.count));
+  disableButtons(isDisabled) {
+    this.buttonPrev.disabled = this.buttonNext.disabled = isDisabled;
+  }
 
-      this.slide.classList.remove('--move-right');
-      this.buttonPrev.disabled = this.buttonNext.disabled = false;
-    }, { once: true });
+  toogleSlideClasses(isForward, isActive = 'off') {
+    if (isActive === 'on') {     
+      this.slide.classList.add(isForward ? '--move-right' : '--move-left');
+    } else {
+      this.slide.classList.remove('--move-right', '--move-left')
+    };
   }
 
   push(array) {
@@ -54,7 +94,9 @@ class Slider {
     array.forEach((index) => new this.Card('[data-slider-list]', index));
   }
 
-  moveSlides() {
+  unshift(array) {
+    console.log(`выводим массив ${array}`);
+    array.forEach((index) => new this.Card('[data-slider-list]', index, 'start'));
   }
 }
 

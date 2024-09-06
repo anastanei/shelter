@@ -84,12 +84,23 @@ const petsData = [
 ];
 
 export default class Card {
-  constructor(containerSelector, index) {
+  constructor(containerSelector, index, position = 'end') {
     this.container = document.querySelector(containerSelector);
     this.index = index;
     this.data = petsData[index];
     this.src = "./public/images/pets";
-    this.getCard();
+    this.position = position;
+
+    this.init();
+  }
+  
+  init() {
+    const cardItem = this.getCard();  
+    if (this.position === 'start') {
+      this.container.prepend(cardItem);
+    } else {
+      this.container.appendChild(cardItem);
+    }
   }
 
   getCard() {
@@ -122,6 +133,6 @@ export default class Card {
 
     new Popup(card, this.data);
 
-    this.container.appendChild(cardItem);
+    return cardItem;
   }
 }

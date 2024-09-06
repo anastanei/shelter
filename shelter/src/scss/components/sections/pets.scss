@@ -21,10 +21,10 @@
   }
 
   &__slider {
-    margin-bottom: 42px;
+    margin-bottom: 32px;
 
     @media (min-width: $media-mobile-l) {
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
   }
 
@@ -39,6 +39,15 @@
   }
   100% {
     transform: translateX(-969px);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(969px);
   }
 }
 
@@ -75,16 +84,16 @@
   &__list {
     position: relative;
     min-height: 431.09px;
-    // left: 0;
     padding-bottom: 10px;
     display: flex;
-    // justify-content: center;
     column-gap: 53px;
-    // transform: translateX(0);
-    //transform: translateX(969px);
 
     &.--move-right {
-      animation: slide-right 4s forwards; /* Запуск анимации вправо */
+      animation: slide-right 4s forwards;
+    }
+
+    &.--move-left {
+      animation: slide-left 4s backwards;
     }
 
     @media (min-width: $media-mobile-l) {

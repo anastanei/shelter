@@ -11,11 +11,16 @@ class Slider {
     this.buttonPrev = this.slider.querySelector('[data-slider-previous]');
     this.buttonNext = this.slider.querySelector('[data-slider-next]');
 
+    this.mediaMobile = window.matchMedia('(max-width: 639px)');
+    this.mediaTablet = window.matchMedia('(min-width: 640px) and (max-width: 1140px)');
+    this.mediaDesktop = window.matchMedia('(min-width: 1140px)');
+
     this.init();
   }
 
   init() {
-    this.count = 3;
+    this.count = this.getCount();
+
     const indices = this.indices;
     this.currentIndices = shuffle(indices).slice(0, this.count);
     this.rightIndices = undefined;
@@ -34,6 +39,12 @@ class Slider {
       this.rightIndices = newRightIndices;
     });
   }
+
+  getCount() {
+    if (this.mediaMobile.matches) return 1;
+    if (this.mediaTablet.matches) return 2;
+    if (this.mediaDesktop.matches) return 3;
+  };
 
   moveSlides(currentIndices, isForward) {
 

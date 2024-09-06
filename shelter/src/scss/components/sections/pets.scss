@@ -71,15 +71,6 @@ $wrapper-desktop: calc(#{$card} * 3 + #{$slider-gap-desktop} * 2);
 
 .slider {
   position: relative;
-  // width: 100%;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // row-gap: 20px;
-
-  @media (min-width: $media-tablet) {
-    // position: static;
-  }
 
   &__wrapper {
     position: relative;
@@ -88,8 +79,6 @@ $wrapper-desktop: calc(#{$card} * 3 + #{$slider-gap-desktop} * 2);
     margin: 0 auto;
     padding: 0 10px;
     flex-grow: 1;
-
-    outline: 2px solid red;
 
     @media (min-width: $media-mobile-l) {
       width: $wrapper-tablet;
@@ -113,11 +102,11 @@ $wrapper-desktop: calc(#{$card} * 3 + #{$slider-gap-desktop} * 2);
     }
 
     &.--move-right {
-      animation: slide-right 4s forwards;
+      animation: slide-right 1s forwards;
     }
 
     &.--move-left {
-      animation: slide-left 4s backwards;
+      animation: slide-left 1s backwards;
     }
   }
 

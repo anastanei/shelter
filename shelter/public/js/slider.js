@@ -11,22 +11,22 @@ class Slider {
     this.buttonPrev = this.slider.querySelector('[data-slider-previous]');
     this.buttonNext = this.slider.querySelector('[data-slider-next]');
 
+    this.mobileCount = 1;
+    this.tabletCount = 2;
+    this.desktopCount = 3;
+
+
     this.mediaMobile = window.matchMedia('(max-width: 639px)');
     this.mediaTablet = window.matchMedia('(min-width: 640px) and (max-width: 1140px)');
     this.mediaDesktop = window.matchMedia('(min-width: 1140px)');
+
+    this.count = this.getCount();
 
     this.init();
   }
 
   init() {
-    this.count = this.getCount();
-
-    const indices = this.indices;
-    this.currentIndices = shuffle(indices).slice(0, this.count);
-    this.rightIndices = undefined;
-    this.leftIndices = undefined;
-    this.push([...this.currentIndices]);
-
+    this.getLayout();
     this.buttonNext.addEventListener('click', () => {
       const [newLeftIndices, newCurrentIndices] = this.moveSlides(this.currentIndices, true);
       this.currentIndices = newCurrentIndices;
@@ -38,16 +38,39 @@ class Slider {
       this.currentIndices = newCurrentIndices;
       this.rightIndices = newRightIndices;
     });
+    this.handleMediaQueries();
   }
 
   getCount() {
-    if (this.mediaMobile.matches) return 1;
-    if (this.mediaTablet.matches) return 2;
-    if (this.mediaDesktop.matches) return 3;
+    if (this.mediaMobile.matches) return this.mobileCount;
+    if (this.mediaTablet.matches) return this.tabletCount;
+    if (this.mediaDesktop.matches) return this.desktopCount;
   };
 
-  moveSlides(currentIndices, isForward) {
+  getLayout() {
+    const indices = this.indices;
+    this.currentIndices = shuffle(indices).slice(0, this.count);
+    this.rightIndices = undefined;
+    this.leftIndices = undefined;
+    this.addCards([...this.currentIndices], true);
+  }
 
+  handleMediaQueries() {
+    this.mediaMobile.addEventListener('change', (event) => this.updateAmount(event, this.mobileCount));
+    this.mediaTablet.addEventListener('change', (event) => this.updateAmount(event, this.tabletCount));
+    this.mediaDesktop.addEventListener('change', (event) => this.updateAmount(event, this.desktopCount));
+  }
+
+  updateAmount(event, count) {
+    if (event.matches) {
+      this.removePopups();
+      this.slide.innerHTML = '';
+      this.count = count;
+      this.getLayout();
+    }
+  }
+
+  moveSlides(currentIndices, isForward) {
     const getNewIndices = () => {
       const availableIndices = this.indices.filter(item => !currentIndices.includes(item));
       const shuffledIndices = shuffle(availableIndices);
@@ -63,11 +86,7 @@ class Slider {
     this.toogleSlideClasses(isForward, 'on');
     this.removePopups();
 
-    if (isForward) {
-      this.push([...nextIndices]);
-    } else {
-      this.unshift([...nextIndices]);
-    }
+    this.addCards(nextIndices, isForward);
 
     return [currentIndices, nextIndices];
   }
@@ -107,14 +126,14 @@ class Slider {
     };
   }
 
-  push(array) {
-    console.log(`выводим массив ${array}`);
-    array.forEach((index) => new this.Card('[data-slider-list]', index));
-  }
-
-  unshift(array) {
-    console.log(`выводим массив ${array}`);
-    array.forEach((index) => new this.Card('[data-slider-list]', index, 'start'));
+  addCards(array, isForward) {
+    if (isForward) {
+      console.log(`выводим массив ${array}`);
+      array.forEach((index) => new this.Card('[data-slider-list]', index));
+    } else {
+      console.log(`выводим массив ${array}`);
+      array.forEach((index) => new this.Card('[data-slider-list]', index, 'start'));
+    }
   }
 }
 

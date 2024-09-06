@@ -1051,7 +1051,6 @@ h2,
   margin: 0 auto;
   padding: 0 10px;
   flex-grow: 1;
-  outline: 2px solid red;
 }
 @media (min-width: 640px) {
   .slider__wrapper {
@@ -1080,10 +1079,10 @@ h2,
   }
 }
 .slider__list.--move-right {
-  animation: slide-right 4s forwards;
+  animation: slide-right 1s forwards;
 }
 .slider__list.--move-left {
-  animation: slide-left 4s backwards;
+  animation: slide-left 1s backwards;
 }
 .slider__arrow-button {
   position: absolute;

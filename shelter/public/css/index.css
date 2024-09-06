@@ -1021,10 +1021,10 @@ h2,
 }
 @keyframes slide-left {
   0% {
-    transform: translateX(0);
+    transform: translateX(-969px);
   }
   100% {
-    transform: translateX(969px);
+    transform: translateX(0);
   }
 }
 .slider {

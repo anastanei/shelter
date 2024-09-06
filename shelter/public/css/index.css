@@ -1016,7 +1016,7 @@ h2,
 }
 @media (min-width: 640px) {
   :root {
-    --translate-distance: -564px;
+    --translate-distance: -600px;
   }
 }
 @media (min-width: 1140px) {
@@ -1054,7 +1054,7 @@ h2,
 }
 @media (min-width: 640px) {
   .slider__wrapper {
-    width: calc(270px * 2 + 12px);
+    width: calc(270px * 2 + 30px);
   }
 }
 @media (min-width: 1140px) {
@@ -1070,7 +1070,7 @@ h2,
 }
 @media (min-width: 640px) {
   .slider__list {
-    column-gap: 12px;
+    column-gap: 30px;
   }
 }
 @media (min-width: 1140px) {

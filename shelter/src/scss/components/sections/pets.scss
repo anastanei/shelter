@@ -34,7 +34,7 @@
 }
 
 $card: 270px;
-$slider-gap-tablet: 12px;
+$slider-gap-tablet: 30px;
 $slider-gap-desktop: 53px;
 $wrapper-tablet: calc(#{$card} * 2 + #{$slider-gap-tablet});
 $wrapper-desktop: calc(#{$card} * 3 + #{$slider-gap-desktop} * 2);
@@ -43,7 +43,7 @@ $wrapper-desktop: calc(#{$card} * 3 + #{$slider-gap-desktop} * 2);
   --translate-distance: -270px; // card
 
   @media (min-width: #{$media-mobile-l}) {
-    --translate-distance: -564px; // 270 * 2 + 12 * 2 (для планшетов)
+    --translate-distance: -600px; // 270 * 2 + 30 * 2 (для планшетов)
   }
 
   @media (min-width: #{$media-slider-max}) {

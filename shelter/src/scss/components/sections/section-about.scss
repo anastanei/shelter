@@ -37,11 +37,13 @@
   }
 
   &__title {
-    margin-bottom: 25px;
+    max-width: 10.5em;
+    margin: 0 auto 25px;
     color: $color-dark-l;
     text-align: center;
 
     @media (min-width: $media-tablet) {
+      margin: 0 0 25px;
       text-align: left;
     }
   }

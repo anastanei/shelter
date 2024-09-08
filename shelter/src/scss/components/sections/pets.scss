@@ -12,7 +12,8 @@
   }
 
   &__title {
-    margin-bottom: 42px;
+    max-width: 12em;
+    margin: 0 auto 42px;
     text-align: center;
 
     @media (min-width: $media-mobile-l) {
@@ -56,13 +57,13 @@ $wrapper-desktop: calc(#{$card} * 3 + #{$slider-gap-desktop} * 2);
     transform: translateX(0);
   }
   100% {
-    transform: translateX(var(--translate-distance)); // Используем переменную
+    transform: translateX(var(--translate-distance));
   }
 }
 
 @keyframes slide-left {
   0% {
-    transform: translateX(var(--translate-distance)); // Используем переменную
+    transform: translateX(var(--translate-distance));
   }
   100% {
     transform: translateX(0);

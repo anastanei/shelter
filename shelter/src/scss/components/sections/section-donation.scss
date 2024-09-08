@@ -31,6 +31,15 @@
     }
   }
 
+  &__title {
+    margin: 0 auto;
+    max-width: 10.85em;
+
+    @media (min-width: $media-mobile-l) {
+      margin: 0;
+    }
+  }
+
   &__title,
   &__card-intro {
     text-align: center;
@@ -90,6 +99,7 @@
   border-radius: 9px;
   transition: background-color 0.3s ease-out;
   text-wrap: nowrap;
+
   @include hover-media-query {
     &:hover {
       background-color: $color-primary-light;

@@ -14,7 +14,8 @@
   }
 
   &__title {
-    margin-bottom: 42px;
+    max-width: 11.42em;
+    margin: 0 auto 42px;
     text-align: center;
 
     @media (min-width: $media-mobile-l) {

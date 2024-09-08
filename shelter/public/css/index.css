@@ -961,12 +961,14 @@ h2,
   }
 }
 .section-about__title {
-  margin-bottom: 25px;
+  max-width: 10.5em;
+  margin: 0 auto 25px;
   color: #545454;
   text-align: center;
 }
 @media (min-width: 768px) {
   .section-about__title {
+    margin: 0 0 25px;
     text-align: left;
   }
 }
@@ -1013,7 +1015,8 @@ h2,
   }
 }
 .pets__title {
-  margin-bottom: 42px;
+  max-width: 12em;
+  margin: 0 auto 42px;
   text-align: center;
 }
 @media (min-width: 640px) {
@@ -1154,8 +1157,9 @@ h2,
   }
 }
 .section-help__title {
+  max-width: 8.8em;
+  margin: 0 auto 35px;
   text-align: center;
-  margin-bottom: 35px;
 }
 @media (min-width: 640px) {
   .section-help__title {
@@ -1248,6 +1252,15 @@ h2,
 @media (min-width: 1024px) {
   .section-donation__content {
     width: unset;
+    margin: 0;
+  }
+}
+.section-donation__title {
+  margin: 0 auto;
+  max-width: 10.85em;
+}
+@media (min-width: 640px) {
+  .section-donation__title {
     margin: 0;
   }
 }

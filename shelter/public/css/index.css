@@ -687,7 +687,7 @@ h2,
   left: 0;
   min-width: 100vw;
   min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100lvh;
   background-color: rgba(41, 41, 41, 0.7);
   content: "";
   visibility: hidden;

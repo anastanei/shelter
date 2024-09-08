@@ -29,9 +29,11 @@
     cursor: default;
   }
 
-  &:hover,
-  &--active {
-    color: $color-dark-3xl;
+  @include hover-media-query {
+    &:hover,
+    &--active {
+      color: $color-dark-3xl;
+    }
   }
 
   &:active,
@@ -44,13 +46,17 @@
   &--dark {
     color: $color-dark-s;
 
-    &:hover {
-      color: $color-light-s;
+    @include hover-media-query {
+      &:hover {
+        color: $color-light-s;
+      }
     }
 
-    &.link--active {
-      &:hover {
-        color: $color-dark-s;
+    @include hover-media-query {
+      &.link--active {
+        &:hover {
+          color: $color-dark-s;
+        }
       }
     }
 
@@ -109,11 +115,13 @@
       color: $color-light-xl;
     }
 
-    &:hover {
-      & .header__logo {
-        &-title,
-        &-subtitle {
-          color: $color-primary-light;
+    @include hover-media-query {
+      &:hover {
+        & .header__logo {
+          &-title,
+          &-subtitle {
+            color: $color-primary-light;
+          }
         }
       }
     }
@@ -140,12 +148,13 @@
     & .header__logo-subtitle {
       color: $color-dark-3xl;
     }
-
-    & .header__logo:hover {
-      & .header__logo {
-        &-title,
-        &-subtitle {
-          color: $color-primary;
+    @include hover-media-query {
+      & .header__logo:hover {
+        & .header__logo {
+          &-title,
+          &-subtitle {
+            color: $color-primary;
+          }
         }
       }
     }
@@ -189,12 +198,14 @@
       }
     }
 
-    &:hover {
-      & .header__mobile-button-line {
-        background-color: $color-light-s;
+    @include hover-media-query {
+      &:hover {
+        & .header__mobile-button-line {
+          background-color: $color-light-s;
 
-        &--dark {
-          background-color: $color-primary;
+          &--dark {
+            background-color: $color-primary;
+          }
         }
       }
     }

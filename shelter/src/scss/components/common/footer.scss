@@ -107,11 +107,13 @@
       text-align: left;
     }
 
-    &:hover {
-      color: $color-light-l;
+    @include hover-media-query {
+      &:hover {
+        color: $color-light-l;
 
-      & path {
-        fill: $color-light-l;
+        & path {
+          fill: $color-light-l;
+        }
       }
     }
 

@@ -197,8 +197,10 @@ h2,
 .link--active {
   cursor: default;
 }
-.link:hover, .link--active {
-  color: #292929;
+@media (hover: hover) {
+  .link:hover, .link--active {
+    color: #292929;
+  }
 }
 .link:active:after, .link--active:after {
   width: 100%;
@@ -206,11 +208,15 @@ h2,
 .link--dark {
   color: #cdcdcd;
 }
-.link--dark:hover {
-  color: #fafafa;
+@media (hover: hover) {
+  .link--dark:hover {
+    color: #fafafa;
+  }
 }
-.link--dark.link--active:hover {
-  color: #cdcdcd;
+@media (hover: hover) {
+  .link--dark.link--active:hover {
+    color: #cdcdcd;
+  }
 }
 .link--dark:active {
   color: #fafafa;
@@ -258,8 +264,10 @@ h2,
   letter-spacing: 0.1em;
   color: #ffffff;
 }
-.header__logo:hover .header__logo-title, .header__logo:hover .header__logo-subtitle {
-  color: #fddcc4;
+@media (hover: hover) {
+  .header__logo:hover .header__logo-title, .header__logo:hover .header__logo-subtitle {
+    color: #fddcc4;
+  }
 }
 .header__logo:active .header__logo-title, .header__logo:active .header__logo-subtitle {
   color: #fafafa;
@@ -275,8 +283,10 @@ h2,
 .header--secondary .header__logo-subtitle {
   color: #292929;
 }
-.header--secondary .header__logo:hover .header__logo-title, .header--secondary .header__logo:hover .header__logo-subtitle {
-  color: #f1cdb3;
+@media (hover: hover) {
+  .header--secondary .header__logo:hover .header__logo-title, .header--secondary .header__logo:hover .header__logo-subtitle {
+    color: #f1cdb3;
+  }
 }
 .header--secondary .header__logo:active .header__logo-title, .header--secondary .header__logo:active .header__logo-subtitle {
   color: #fddcc4;
@@ -308,11 +318,13 @@ h2,
 .header__mobile-button-line--dark {
   background-color: #000;
 }
-.header__mobile-button:hover .header__mobile-button-line {
-  background-color: #fafafa;
-}
-.header__mobile-button:hover .header__mobile-button-line--dark {
-  background-color: #f1cdb3;
+@media (hover: hover) {
+  .header__mobile-button:hover .header__mobile-button-line {
+    background-color: #fafafa;
+  }
+  .header__mobile-button:hover .header__mobile-button-line--dark {
+    background-color: #f1cdb3;
+  }
 }
 .header__mobile-button:active .header__mobile-button-line {
   background-color: #fddcc4;
@@ -504,11 +516,13 @@ h2,
   text-wrap: nowrap;
   text-align: left;
 }
-.footer__link:hover {
-  color: #f6f6f6;
-}
-.footer__link:hover path {
-  fill: #f6f6f6;
+@media (hover: hover) {
+  .footer__link:hover {
+    color: #f6f6f6;
+  }
+  .footer__link:hover path {
+    fill: #f6f6f6;
+  }
 }
 .footer__link:active {
   color: #fddcc4;
@@ -554,8 +568,10 @@ h2,
   border: 2px #f1cdb3 solid;
   background-color: unset;
 }
-.button--active:hover {
-  background-color: #fddcc4;
+@media (hover: hover) {
+  .button--active:hover {
+    background-color: #fddcc4;
+  }
 }
 .button--active:active {
   background-color: #ffffff;
@@ -580,9 +596,15 @@ h2,
     border-color: #fddcc4;
   }
 }
-.arrow-button:active, .arrow-button.--active, .arrow-button.--active:hover {
+.arrow-button:active, .arrow-button.--active {
   background-color: #f1cdb3;
   border-color: #f1cdb3;
+}
+@media (hover: hover) {
+  .arrow-button.--active:hover {
+    background-color: #f1cdb3;
+    border-color: #f1cdb3;
+  }
 }
 .arrow-button.--active {
   cursor: default;
@@ -1285,8 +1307,10 @@ h2,
   transition: background-color 0.3s ease-out;
   text-wrap: nowrap;
 }
-.card-link:hover {
-  background-color: #fddcc4;
+@media (hover: hover) {
+  .card-link:hover {
+    background-color: #fddcc4;
+  }
 }
 .card-link:active {
   background-color: #fafafa;

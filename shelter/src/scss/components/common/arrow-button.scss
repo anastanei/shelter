@@ -19,10 +19,16 @@
   }
 
   &:active,
-  &.--active,
-  &.--active:hover {
+  &.--active {
     background-color: $color-primary;
     border-color: $color-primary;
+  }
+
+  @include hover-media-query {
+    &.--active:hover {
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
   }
 
   &.--active {

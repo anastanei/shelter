@@ -48,9 +48,13 @@ export default class Popup {
     spanIcon.className = 'cross-icon';
     closeButton.appendChild(spanIcon);
 
+    const src = `./public/images/pets/500/pets-${this.item.name}`;
+
     containerDiv.innerHTML = `
       <picture class="popup__picture" data-popup-picture="">
-        <img class="img-in-picture" src="./public/images/pets/500/pets-${this.item.name}.jpg" alt="${this.item.breed}" width="350" height="350" data-popup-img="">
+        <source srcset="${src}.avif" type="image/avif">
+        <source srcset="${src}.webp" type="image/webp">
+        <img class="img-in-picture" src="${src}.jpg" alt="${this.item.breed}" width="350" height="350" data-popup-img="">
       </picture>
       <div class="popup__content">
         <h3 class="h2 popup__name" data-popup-name="">${this.item.name}</h3>

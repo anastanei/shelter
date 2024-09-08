@@ -59,10 +59,8 @@ class Slider {
   addCards(array, isForward) {
     const currentArray = array;
     if (isForward) {
-      console.log(`Идём вправо, выводим массив ${array}`);
       currentArray.forEach((index) => new this.Card('[data-slider-list]', index));
     } else {
-      console.log(`Идём влево, выводим массив ${array}`);
       for (let i = array.length - 1; i >= 0; i -=1 ) {
         new this.Card('[data-slider-list]', array[i], 'start');
       }

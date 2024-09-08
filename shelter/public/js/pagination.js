@@ -89,6 +89,7 @@ class Pagination {
   }
 
   showPage(page) {
+    this.removePopups();
     this.list.innerHTML = '';
     this.pagesAmount = this.getPagesAmount();
     this.startIndex = (page - 1) * this.count;
@@ -103,6 +104,13 @@ class Pagination {
     this.showCurrent.innerHTML = page;
     this.buttonFirst.disabled = this.buttonPrev.disabled = (page == this.startPage);
     this.buttonLast.disabled = this.buttonNext.disabled = (page == this.pagesAmount);
+  }
+
+  removePopups() {
+    const popups = document.querySelectorAll('[data-popup]');
+    popups.forEach(popup => {
+      popup.remove();
+    });
   }
 }
 

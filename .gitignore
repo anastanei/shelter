@@ -39,7 +39,12 @@ build/Release
 
 # Dependency directories
 node_modules/
+shelter/node_modules/
+js30-audio-player/node_modules/
+
+js30-audio-player/.DS_Store
 jspm_packages/
+
 
 # TypeScript v1 declaration files
 typings/
